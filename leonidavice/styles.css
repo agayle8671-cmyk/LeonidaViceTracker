@@ -716,3 +716,19 @@ body.compact-mode .card-title{font-size:12px;line-height:1.3}
 body.compact-mode .card-outcomes{gap:5px}
 body.compact-mode .outcome-btn{padding:6px 8px}
 body.compact-mode .market-grid{gap:7px}
+
+/* ── PROPERTY CARD CLICK STATES ── */
+.prop-card[onclick] { cursor: pointer; }
+.prop-card[onclick]:hover { border-color: rgba(255,45,120,0.4); box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,45,120,0.15); }
+.btn-view-details {
+  display: block; width: 100%; padding: 9px; border-radius: 8px;
+  font-size: 12px; font-weight: 700; text-align: center;
+  background: var(--surface-3); color: var(--text-2);
+  border: 1px solid var(--border); transition: all 0.15s;
+  margin-top: 10px; cursor: pointer;
+}
+.btn-view-details:hover { background: var(--pink); color: #fff; border-color: var(--pink); }
+/* ── BUSINESS ROW CLICK STATES ── */
+.biz-table tbody tr { cursor: pointer; }
+.biz-table tbody tr:hover td { background: var(--surface-2); }
+.biz-row-link { display: contents; }

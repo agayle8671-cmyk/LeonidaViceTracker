@@ -17,7 +17,7 @@
     <a href="index.html" class="nav-link">Dashboard</a><a href="stocks.html" class="nav-link">Markets</a>
     <a href="properties.html" class="nav-link">Properties</a><a href="businesses.html" class="nav-link active">Businesses</a>
     <a href="heists.html" class="nav-link">Heists</a><a href="news.html" class="nav-link">News</a>
-    <a href="leaderboard.html" class="nav-link">Watchlist</a><a href="about.html" class="nav-link">About</a>
+    <a href="leaderboard.html" class="nav-link">Leaderboard</a><a href="about.html" class="nav-link">About</a>
   </div>
   <div class="nav-right">
     <div class="nav-live"><span class="nav-live-dot"></span><span class="nav-live-text">LIVE</span><span class="nav-live-count" data-traders>4,333 online</span></div>
@@ -58,10 +58,11 @@
           <th style="width:100px">TREND ↕</th>
           <th style="width:120px">HEAT ↕</th>
           <th style="width:110px">NET / WEEK</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr data-cat="Arms">
+        <tr data-cat="Arms" onclick="location.href='calculator.html?biz=Bunker'" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Grassrivers Bunker Ops</div><div class="biz-cat">Arms · Kelly County</div></div></td>
           <td><span class="badge badge-red">Arms</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$540K</td>
@@ -69,8 +70,9 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--red)">-3.40%</td>
           <td><div class="heat-bar"><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">5/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$345K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
-        <tr data-cat="Contraband">
+        <tr data-cat="Contraband" onclick="location.href='calculator.html?biz=Coke+Lab'" style="cursor:pointer" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Coca Cabana Distribution</div><div class="biz-cat">Contraband · Vice-Dale</div></div></td>
           <td><span class="badge badge-pink">Contraband</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$480K</td>
@@ -78,8 +80,9 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--teal)">+12.40%</td>
           <td><div class="heat-bar"><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block off"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">4/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$370K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
-        <tr data-cat="Contraband">
+        <tr data-cat="Contraband" onclick="location.href='calculator.html?biz=Meth+Lab'" style="cursor:pointer" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Port Gellhorn Methlab</div><div class="biz-cat">Contraband · Kelly County</div></div></td>
           <td><span class="badge badge-pink">Contraband</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$410K</td>
@@ -87,8 +90,9 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--red)">-1.80%</td>
           <td><div class="heat-bar"><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><div class="heat-block on-high"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">5/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$260K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
-        <tr data-cat="Smuggling">
+        <tr data-cat="Smuggling" onclick="location.href='calculator.html?biz=Import%2FExport'" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Vice Beach Special Cargo</div><div class="biz-cat">Smuggling · Vice-Dale</div></div></td>
           <td><span class="badge badge-cyan">Smuggling</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$360K</td>
@@ -96,8 +100,9 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--teal)">+8.60%</td>
           <td><div class="heat-bar"><div class="heat-block on-med"></div><div class="heat-block on-med"></div><div class="heat-block on-med"></div><div class="heat-block off"></div><div class="heat-block off"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">3/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$255K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
-        <tr data-cat="Counterfeit">
+        <tr data-cat="Counterfeit" onclick="location.href='calculator.html?biz=Counterfeit+Cash'" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Vice Counterfeit Press</div><div class="biz-cat">Counterfeit · Vice-Dale</div></div></td>
           <td><span class="badge badge-gold">Counterfeit</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$310K</td>
@@ -105,8 +110,9 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--teal)">+6.10%</td>
           <td><div class="heat-bar"><div class="heat-block on-med"></div><div class="heat-block on-med"></div><div class="heat-block on-med"></div><div class="heat-block off"></div><div class="heat-block off"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">3/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$225K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
-        <tr data-cat="Vehicles">
+        <tr data-cat="Vehicles" onclick="location.href='calculator.html?biz=Import%2FExport'" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Logos Export Auto Shop</div><div class="biz-cat">Vehicles · Vice-Dale</div></div></td>
           <td><span class="badge badge-purple">Vehicles</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$295K</td>
@@ -114,8 +120,9 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--teal)">+2.30%</td>
           <td><div class="heat-bar"><div class="heat-block on-low"></div><div class="heat-block on-low"></div><div class="heat-block off"></div><div class="heat-block off"></div><div class="heat-block off"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">2/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$205K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
-        <tr data-cat="Forgery">
+        <tr data-cat="Forgery" onclick="location.href='calculator.html?biz=Document+Forgery'" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Sinfrontera Document Forgery</div><div class="biz-cat">Forgery · Vice-Dale</div></div></td>
           <td><span class="badge badge-gray">Forgery</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$220K</td>
@@ -123,8 +130,9 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--teal)">+4.20%</td>
           <td><div class="heat-bar"><div class="heat-block on-low"></div><div class="heat-block on-low"></div><div class="heat-block off"></div><div class="heat-block off"></div><div class="heat-block off"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">2/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$160K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
-        <tr data-cat="Hospitality">
+        <tr data-cat="Hospitality" onclick="location.href='calculator.html?biz=Nightclub'" style="cursor:pointer">
           <td><div class="biz-name-cell"><div class="biz-name">Neon Tide Nightclub Floor</div><div class="biz-cat">Hospitality · Vice City</div></div></td>
           <td><span class="badge badge-green">Hospitality</span></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text)">$175K</td>
@@ -132,6 +140,7 @@
           <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--teal)">+5.00%</td>
           <td><div class="heat-bar"><div class="heat-block on-low"></div><div class="heat-block off"></div><div class="heat-block off"></div><div class="heat-block off"></div><div class="heat-block off"></div><span style="font-size:9.5px;color:var(--text-3);margin-left:6px">1/5</span></div></td>
           <td style="font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--teal)">$105K</td>
+          <td style="color:var(--text-3);font-size:14px;text-align:right">→</td>
         </tr>
       </tbody>
     </table>
@@ -148,7 +157,7 @@
     <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-mark">◈</div><div class="logo-text-wrap"><div class="logo-name">LEONIDAVICE</div><div class="logo-sub">Terminal · V2.0</div></div></a><p class="footer-tagline">The Bloomberg Terminal for criminals.</p></div>
     <div class="footer-links">
       <div class="footer-col"><p class="footer-col-title">Terminal</p><a href="stocks.html">Markets</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="heists.html">Heists</a></div>
-      <div class="footer-col"><p class="footer-col-title">Read</p><a href="news.html">Leonida News</a><a href="leaderboard.html">Watchlist</a><a href="about.html">About</a></div>
+      <div class="footer-col"><p class="footer-col-title">Read</p><a href="news.html">Leonida News</a><a href="leaderboard.html">Leaderboard</a><a href="about.html">About</a></div>
       <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="premium.html">Premium</a></div>
       <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale</a><a href="region.html?r=ambrosia">Ambrosia</a><a href="region.html?r=kelly">Kelly</a><a href="region.html?r=mariana">Mariana</a></div>
     </div>
@@ -166,3 +175,4 @@ function filterBiz(cat, btn) {
 }
 </script>
 </body></html>
+
