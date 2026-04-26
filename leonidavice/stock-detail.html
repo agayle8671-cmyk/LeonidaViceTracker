@@ -97,6 +97,43 @@
           </div>
         </div>
       </div>
+
+      <!-- PREDICTION MARKET PANEL -->
+      <div id="sd-predict-panel" style="margin-top:16px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div>
+            <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);margin-bottom:3px">Prediction Market</div>
+            <div style="font-size:13px;font-weight:600;color:var(--text)" id="sd-market-question">Loading market…</div>
+          </div>
+          <a href="index.html" id="sd-market-link" style="font-size:11px;color:var(--pink);font-weight:600;white-space:nowrap;margin-left:12px">View market →</a>
+        </div>
+        <!-- Probability bar -->
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:900;color:var(--teal)" id="sd-yes-pct">72%</span>
+          <div style="flex:1;height:6px;background:var(--surface-3);border-radius:6px;overflow:hidden">
+            <div id="sd-prob-bar" style="height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan));border-radius:6px;width:72%;transition:width 0.5s ease"></div>
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:900;color:var(--red)" id="sd-no-pct">28%</span>
+        </div>
+        <!-- Buy buttons -->
+        <div style="display:flex;gap:10px">
+          <button id="sd-buy-yes" class="outcome-btn yes" style="flex:1;justify-content:center;gap:8px;padding:11px"
+            onclick="openBuyModal(document.getElementById('sd-predict-panel').dataset.marketId,'yes')">
+            <span class="outcome-label">Predict YES</span>
+            <span class="outcome-pct" id="sd-btn-yes-pct">72%</span>
+          </button>
+          <button id="sd-buy-no" class="outcome-btn no" style="flex:1;justify-content:center;gap:8px;padding:11px"
+            onclick="openBuyModal(document.getElementById('sd-predict-panel').dataset.marketId,'no')">
+            <span class="outcome-label">Predict NO</span>
+            <span class="outcome-pct" id="sd-btn-no-pct">28%</span>
+          </button>
+        </div>
+        <!-- Balance + position -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px">
+          <span style="font-size:11px;color:var(--text-3)">Balance: <span class="wallet-balance" style="color:var(--teal);font-family:'JetBrains Mono',monospace;font-weight:700">Ṁ500</span></span>
+          <span style="font-size:11px;color:var(--text-3)" id="sd-position-display"></span>
+        </div>
+      </div>
     </div>
 
     <div class="market-detail-card">
@@ -191,12 +228,75 @@
 <script src="lmsr.js"></script>
 <script src="game-loop.js"></script>
 <script>
-// Update sd-sym2 to match sd-sym
+// Stock → market mapping
+const STOCK_MARKET_MAP = {
+  PSWSR:  'pswsr-6',
+  LOGOS:  'logos-week',
+  SNFB:   'snfb-heist',
+  DKARM:  'dkarm-contract',
+  ALCRYS: 'alcrys-accident',
+  LURE:   'lure-roi',
+  AGTR:   'agtr-dip',
+  LNLOT:  'pswsr-brewery',
+  MGNOT:  'mgnot-leonidaman',
+  VCPROP: 'vcprop-150'
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-  const sym = new URLSearchParams(window.location.search).get('sym') || 'PSWSR';
+  const sym = (new URLSearchParams(window.location.search).get('sym') || 'PSWSR').toUpperCase();
+
+  // Update sym display
   const el2 = document.getElementById('sd-sym2');
-  if(el2) el2.textContent = sym;
-  // Assassination info per stock
+  if (el2) el2.textContent = sym;
+
+  // Wire up prediction panel
+  const marketId = STOCK_MARKET_MAP[sym] || 'pswsr-6';
+  const panel = document.getElementById('sd-predict-panel');
+  if (panel) {
+    panel.dataset.marketId = marketId;
+    const cfg  = LV_CONFIG.getMarket(marketId);
+    const prob = LV_LMSR.getImpliedProb(marketId);
+    const yes  = Math.round(prob * 100);
+    const no   = 100 - yes;
+
+    // Question
+    const qEl = document.getElementById('sd-market-question');
+    if (qEl) qEl.textContent = cfg.question;
+
+    // Link
+    const linkEl = document.getElementById('sd-market-link');
+    if (linkEl) linkEl.href = 'market.html?id=' + marketId;
+
+    // Probability
+    document.getElementById('sd-yes-pct').textContent = yes + '%';
+    document.getElementById('sd-no-pct').textContent  = no  + '%';
+    document.getElementById('sd-prob-bar').style.width = yes + '%';
+    document.getElementById('sd-btn-yes-pct').textContent = yes + '%';
+    document.getElementById('sd-btn-no-pct').textContent  = no  + '%';
+
+    // Show existing position
+    const pos = LV_LMSR.getPosition(marketId);
+    const posEl = document.getElementById('sd-position-display');
+    if (posEl) {
+      if (pos.yesShares > 0.01) {
+        posEl.innerHTML = '<span style="color:var(--teal)">Your position: YES ' + pos.yesShares.toFixed(1) + ' shares</span>';
+      } else if (pos.noShares > 0.01) {
+        posEl.innerHTML = '<span style="color:var(--red)">Your position: NO ' + pos.noShares.toFixed(1) + ' shares</span>';
+      }
+    }
+
+    // Check if market is resolved — disable buttons
+    if (LV_GAME.isResolved(marketId)) {
+      const resolved = LV_GAME.getResolvedMarkets()[marketId];
+      document.getElementById('sd-buy-yes').disabled = true;
+      document.getElementById('sd-buy-no').disabled  = true;
+      document.getElementById('sd-buy-yes').style.opacity = '0.4';
+      document.getElementById('sd-buy-no').style.opacity  = '0.4';
+      if (qEl) qEl.textContent = 'RESOLVED ' + resolved.outcome.toUpperCase() + ' — ' + resolved.reason;
+    }
+  }
+
+  // Company intelligence
   const info = {
     PSWSR:  { about:'Pisswasser Brewing is Leonida\'s dominant beer brand, with a brewery in Vice-Dale County. Strong correlation with nightlife sector and assassination events.', strategy:'Buy before assassination windows open. Sell within 48h. Beta: 1.4 (high volatility). Avoid during Allied Crystal labor disputes.' },
     LOGOS:  { about:'Logos Entertainment operates casinos and entertainment venues across Vice City. Revenue tied to tourism and nightlife foot traffic.', strategy:'Buy on positive tourism news. Sensitive to law enforcement crackdowns on Vice City nightlife. Beta: 1.1.' },
@@ -210,18 +310,18 @@ document.addEventListener('DOMContentLoaded', () => {
     VCPROP: { about:'Vice City Properties manages the premium real estate portfolio across Vice-Dale County, including Vice Beach penthouses.', strategy:'Long-term hold. Low beta (0.7). Buy on interest rate cuts from Sinfrontera Bank. Correlated with SNFB rate decisions.' }
   };
   const d = info[sym] || info['PSWSR'];
-  const setEl = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
+  const setEl = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
   setEl('sd-about', d.about);
   setEl('sd-strategy', d.strategy);
-  // Update assassination alert per stock
+
   const alerts = {
-    PSWSR: 'The Madrazzo assassination window is currently OPEN. Historical data shows PSWSR gains 18–24% in the 48 hours following this event. Accumulate before the window closes.',
+    PSWSR: 'The Madrazzo assassination window is currently <strong style="color:var(--teal)">OPEN</strong>. Historical data shows PSWSR gains 18–24% in the 48 hours following this event. Accumulate before the window closes.',
     DKARM: 'Duke Arms benefits from assassination events via increased security spending. Typically gains 8–12% in sympathy with PSWSR during active windows.',
     SNFB:  'Sinfrontera Bank is a heist target. Monitor the Heists tracker for active windows. Post-heist dips of 3–5% are historically followed by full recovery within 72h.',
     default: 'Monitor the Heists & Missions tracker for events that may impact this stock. Check the News Feed for real-time intelligence on upcoming story missions.'
   };
   const alertEl = document.getElementById('sd-assassination-info');
-  if(alertEl) alertEl.innerHTML = (alerts[sym] || alerts.default);
+  if (alertEl) alertEl.innerHTML = (alerts[sym] || alerts.default);
 });
 </script>
 </body></html>
