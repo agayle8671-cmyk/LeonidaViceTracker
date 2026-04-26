@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>LeonidaVice — The Leonida Market Terminal</title>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>LeonidaVice — The Bloomberg Terminal for Criminals</title>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
+<!-- TICKER -->
 <div class="ticker-wrap"><div class="ticker-track">
   <span class="tick up"><span class="tick-sym">PSWSR</span> <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span>
   <span class="tick down"><span class="tick-sym">LOGOS</span> <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span>
@@ -33,154 +33,236 @@
   <span class="tick down"><span class="tick-sym">VCPROP</span> <span class="tick-val">$142.00</span> <span class="tick-delta">▼0.90%</span></span>
 </div></div>
 
+<!-- NAV -->
 <nav class="nav"><div class="nav-inner">
-  <a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">◈</div>
+    <div class="logo-text-wrap"><div class="logo-name">LEONIDAVICE</div><div class="logo-sub">Terminal · V2.0</div></div>
+  </a>
   <div class="nav-links">
-    <a href="index.html" class="nav-link active">Markets</a>
-    <a href="stocks.html" class="nav-link">Stocks</a>
+    <a href="index.html" class="nav-link active">Dashboard</a>
+    <a href="stocks.html" class="nav-link">Markets</a>
     <a href="properties.html" class="nav-link">Properties</a>
     <a href="businesses.html" class="nav-link">Businesses</a>
-    <a href="news.html" class="nav-link">News Feed</a>
     <a href="heists.html" class="nav-link">Heists</a>
-    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+    <a href="news.html" class="nav-link">News</a>
+    <a href="leaderboard.html" class="nav-link">Watchlist</a>
+    <a href="about.html" class="nav-link">About</a>
   </div>
   <div class="nav-right">
+    <div class="nav-live"><span class="nav-live-dot"></span><span class="nav-live-text">LIVE</span><span class="nav-live-count" data-traders>4,333 online</span></div>
+    <div class="nav-search"><span class="nav-search-icon">⌕</span><input type="text" placeholder="Search ticker, asset, news…"/></div>
     <a href="portfolio.html" class="wallet-nav-item" title="My Leonida Credits">
       <span class="wallet-nav-icon">Ṁ</span>
       <div><div class="wallet-balance">500</div><div class="wallet-label">Credits</div></div>
     </a>
     <span class="streak-display" style="display:none"></span>
     <span class="user-badge-nav"></span>
-    <a href="portfolio.html" class="btn-ghost">Portfolio</a>
-    <a href="premium.html" class="btn-primary">Go Premium</a>
+    <a href="premium.html" class="btn-deposit">DEPOSIT</a>
   </div>
 </div></nav>
 
-<div class="stats-bar"><div class="stats-bar-inner">
-  <div class="stat-item"><span class="stat-label">Market Cap</span><span class="stat-value" data-stat="market-cap">$4.82B</span><span class="stat-delta up">▲ 1.4%</span></div>
-  <div class="stat-divider"></div>
-  <div class="stat-item"><span class="stat-label">24h Volume</span><span class="stat-value">$218M</span><span class="stat-delta up">▲ 8.2%</span></div>
-  <div class="stat-divider"></div>
-  <div class="stat-item"><span class="stat-label">Active Markets</span><span class="stat-value">142</span><span class="stat-delta neutral">—</span></div>
-  <div class="stat-divider"></div>
-  <div class="stat-item"><span class="stat-label">Live Traders</span><span class="stat-value" data-traders>3,841</span><span class="stat-delta up">▲ 12%</span></div>
-  <div class="stat-divider"></div>
-  <div class="stat-item"><span class="stat-label">Assassination Window</span><span class="stat-value live-pulse">OPEN</span><span class="stat-delta up">Bawsaq Active</span></div>
-</div></div>
+<div class="page-wrap"><div class="page-inner">
 
-<div class="main-layout">
-  <aside class="sidebar-left">
-    <div class="sidebar-section">
-      <p class="sidebar-heading">Categories</p>
-      <a href="index.html" class="sidebar-link active"><span class="sidebar-icon">◈</span> All Markets</a>
-      <a href="stocks.html" class="sidebar-link"><span class="sidebar-icon">📈</span> Stocks</a>
-      <a href="properties.html" class="sidebar-link"><span class="sidebar-icon">🏢</span> Properties</a>
-      <a href="businesses.html" class="sidebar-link"><span class="sidebar-icon">💼</span> Businesses</a>
-      <a href="heists.html" class="sidebar-link"><span class="sidebar-icon">🎯</span> Heists</a>
-      <a href="news.html" class="sidebar-link"><span class="sidebar-icon">📡</span> Leonida News</a>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <canvas class="hero-chart-bg" id="hero-bg-chart"></canvas>
+    <div class="hero-eyebrow">LEONIDA BOURSE — LIVE</div>
+    <div class="hero-title">The Bloomberg Terminal<br><span class="accent">for criminals.</span></div>
+    <div class="hero-sub">Real-time fictional markets, property ROI, business profitability and heist plays for GTA VI's state of Leonida. Trade the chaos. Front-run the chaos. Become the chaos.</div>
+    <div class="hero-ctas">
+      <a href="stocks.html" class="btn-hero-primary">OPEN TERMINAL →</a>
+      <a href="heists.html" class="btn-hero-ghost">⚡ HEIST PLAYS</a>
     </div>
-    <div class="sidebar-section">
-      <p class="sidebar-heading">Regions</p>
-      <a href="region.html?r=vice-dale" class="sidebar-link">Vice-Dale County</a>
-      <a href="region.html?r=ambrosia" class="sidebar-link">Ambrosia County</a>
-      <a href="region.html?r=kelly" class="sidebar-link">Kelly County</a>
-      <a href="region.html?r=mariana" class="sidebar-link">Mariana County</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-tile">
+      <div class="hero-stat-label">Total MCAP</div>
+      <div class="hero-stat-value" data-stat="market-cap">$16.3B</div>
+      <div class="hero-stat-sub">6 gainers · 4 losers</div>
     </div>
-    <div class="sidebar-section">
-      <p class="sidebar-heading">Tools</p>
-      <a href="calculator.html" class="sidebar-link">ROI Calculator</a>
-      <a href="portfolio.html" class="sidebar-link">My Portfolio</a>
-      <a href="leaderboard.html" class="sidebar-link">Leaderboard</a>
-      <a href="premium.html" class="sidebar-link premium-link">⚡ Premium</a>
+    <div class="hero-stat-tile">
+      <div class="hero-stat-label">24H Volume</div>
+      <div class="hero-stat-value">$218M</div>
+      <div class="hero-stat-sub">Live tick · 2.5s refresh</div>
     </div>
-  </aside>
+    <div class="hero-stat-tile up">
+      <div class="hero-stat-label">Top Gainer</div>
+      <div class="hero-stat-value">DKARM</div>
+      <div class="hero-stat-sub">+3.90% · $34.15</div>
+    </div>
+    <div class="hero-stat-tile down">
+      <div class="hero-stat-label">Top Loser</div>
+      <div class="hero-stat-value">AGTR</div>
+      <div class="hero-stat-sub">-2.80% · $6.33</div>
+    </div>
+  </div>
+</div>
 
-  <section class="feed">
-    <div class="filter-bar">
-      <div class="filter-tabs">
-        <button class="filter-tab active">Trending</button>
-        <button class="filter-tab">New</button>
-        <button class="filter-tab">Assassination Plays</button>
-        <button class="filter-tab">High Volume</button>
+<!-- TRENDING NOW -->
+<div class="trending-strip">
+  <div class="section-header">
+    <div class="section-title"><span class="section-title-icon">↗</span> Trending now</div>
+    <a href="stocks.html" class="section-link">VIEW ALL →</a>
+  </div>
+  <div class="trending-cards">
+    <a href="stock-detail.html?sym=DKARM" class="trending-card">
+      <canvas class="trending-card-chart sparkline-canvas" data-sym="DKARM" width="80" height="32"></canvas>
+      <div class="trending-card-info">
+        <div class="trending-card-sym">DKARM</div>
+        <div class="trending-card-change up">+3.90%</div>
+        <div class="trending-card-price">$34.15</div>
       </div>
-      <input type="text" placeholder="Search markets…" class="search-input"/>
-    </div>
+      <div class="trending-card-arrow">→</div>
+    </a>
+    <a href="stock-detail.html?sym=AGTR" class="trending-card">
+      <canvas class="trending-card-chart sparkline-canvas" data-sym="AGTR" width="80" height="32"></canvas>
+      <div class="trending-card-info">
+        <div class="trending-card-sym">AGTR</div>
+        <div class="trending-card-change down">-2.80%</div>
+        <div class="trending-card-price">$6.33</div>
+      </div>
+      <div class="trending-card-arrow">→</div>
+    </a>
+    <a href="stock-detail.html?sym=LURE" class="trending-card">
+      <canvas class="trending-card-chart sparkline-canvas" data-sym="LURE" width="80" height="32"></canvas>
+      <div class="trending-card-info">
+        <div class="trending-card-sym">LURE</div>
+        <div class="trending-card-change up">+1.20%</div>
+        <div class="trending-card-price">$9.77</div>
+      </div>
+      <div class="trending-card-arrow">→</div>
+    </a>
+    <a href="stock-detail.html?sym=MGNOT" class="trending-card">
+      <canvas class="trending-card-chart sparkline-canvas" data-sym="MGNOT" width="80" height="32"></canvas>
+      <div class="trending-card-info">
+        <div class="trending-card-sym">MGNOT</div>
+        <div class="trending-card-change up">+0.40%</div>
+        <div class="trending-card-price">$18.90</div>
+      </div>
+      <div class="trending-card-arrow">→</div>
+    </a>
+  </div>
+</div>
 
-    <!-- FEATURED CARD — full Polymarket style -->
-    <div class="market-card featured" data-market-id="pswsr-6">
-      <div class="card-badge">🔥 HOT</div>
-      <div class="card-header">
-        <div class="card-icon-wrap pisswasser">��</div>
-        <div class="card-title-block">
-          <h3 class="card-title">Will Pisswasser stock hit $6.00 before the Madrazzo assassination?</h3>
-          <div class="card-meta">
-            <span class="card-tag">Stocks</span>
-            <span class="card-tag">Assassination Play</span>
-          </div>
+<!-- MAIN DASH GRID -->
+<div class="dash-grid">
+  <div class="dash-main">
+
+    <!-- FEATURED MARKETS -->
+    <div class="featured-markets">
+      <div class="featured-markets-header">
+        <div class="featured-markets-title">Featured markets</div>
+        <a href="stocks.html" class="section-link">ALL →</a>
+      </div>
+      <div class="sector-pills">
+        <button class="sector-pill active" onclick="filterFeatured('ALL',this)">ALL</button>
+        <button class="sector-pill" onclick="filterFeatured('Leisure',this)">LEISURE</button>
+        <button class="sector-pill" onclick="filterFeatured('Finance',this)">FINANCIAL</button>
+        <button class="sector-pill" onclick="filterFeatured('Defense',this)">DEFENSE</button>
+        <button class="sector-pill" onclick="filterFeatured('Energy',this)">INDUSTRIALS</button>
+        <button class="sector-pill" onclick="filterFeatured('Media',this)">MEDIA</button>
+      </div>
+      <div id="featured-rows">
+        <div class="featured-market-row" data-sector="Leisure">
+          <a href="stock-detail.html?sym=PSWSR" class="featured-market-cell">
+            <div class="fmc-sym">PSWSR</div><div class="fmc-name">Pisswasser Brewing Co.</div>
+            <div class="fmc-sector">Beverages</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="PSWSR" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$4.82</span><span class="fmc-change up">+2.30%</span></div>
+            <div class="fmc-vol">VOL $4.2M &nbsp; MCAP $312M</div>
+          </a>
+          <a href="stock-detail.html?sym=LOGOS" class="featured-market-cell">
+            <div class="fmc-sym">LOGOS</div><div class="fmc-name">Logos Entertainment</div>
+            <div class="fmc-sector">Media</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="LOGOS" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$11.20</span><span class="fmc-change down">-1.10%</span></div>
+            <div class="fmc-vol">VOL $1.8M &nbsp; MCAP $890M</div>
+          </a>
+          <a href="stock-detail.html?sym=SNFB" class="featured-market-cell">
+            <div class="fmc-sym">SNFB</div><div class="fmc-name">Sinfrontera National Bank</div>
+            <div class="fmc-sector">Financial</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="SNFB" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$88.40</span><span class="fmc-change up">+0.70%</span></div>
+            <div class="fmc-vol">VOL $3.1M &nbsp; MCAP $4.1B</div>
+          </a>
+        </div>
+        <div class="featured-market-row" data-sector="Defense">
+          <a href="stock-detail.html?sym=DKARM" class="featured-market-cell">
+            <div class="fmc-sym">DKARM</div><div class="fmc-name">Duke Arms Industries</div>
+            <div class="fmc-sector">Defense</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="DKARM" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$34.15</span><span class="fmc-change up">+3.90%</span></div>
+            <div class="fmc-vol">VOL $920K &nbsp; MCAP $1.8B</div>
+          </a>
+          <a href="stock-detail.html?sym=ALCRYS" class="featured-market-cell">
+            <div class="fmc-sym">ALCRYS</div><div class="fmc-name">Allied Crystal Sugar Co.</div>
+            <div class="fmc-sector">Industrials</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="ALCRYS" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$22.60</span><span class="fmc-change down">-0.50%</span></div>
+            <div class="fmc-vol">VOL $2.4M &nbsp; MCAP $2.2B</div>
+          </a>
+          <a href="stock-detail.html?sym=LURE" class="featured-market-cell">
+            <div class="fmc-sym">LURE</div><div class="fmc-name">Lure &amp; Reel Outdoors</div>
+            <div class="fmc-sector">Leisure</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="LURE" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$9.77</span><span class="fmc-change up">+1.20%</span></div>
+            <div class="fmc-vol">VOL $540K &nbsp; MCAP $480M</div>
+          </a>
+        </div>
+        <div class="featured-market-row" data-sector="Leisure">
+          <a href="stock-detail.html?sym=AGTR" class="featured-market-cell">
+            <div class="fmc-sym">AGTR</div><div class="fmc-name">Airgator Marine</div>
+            <div class="fmc-sector">Marine</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="AGTR" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$6.33</span><span class="fmc-change down">-2.80%</span></div>
+            <div class="fmc-vol">VOL $670K &nbsp; MCAP $210M</div>
+          </a>
+          <a href="stock-detail.html?sym=MGNOT" class="featured-market-cell">
+            <div class="fmc-sym">MGNOT</div><div class="fmc-name">Mega Noticias Network</div>
+            <div class="fmc-sector">Media</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="MGNOT" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$18.90</span><span class="fmc-change up">+0.40%</span></div>
+            <div class="fmc-vol">VOL $180K &nbsp; MCAP $640M</div>
+          </a>
+          <a href="stock-detail.html?sym=VCPROP" class="featured-market-cell">
+            <div class="fmc-sym">VCPROP</div><div class="fmc-name">Vice City Properties</div>
+            <div class="fmc-sector">Financial</div>
+            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="VCPROP" width="200" height="36"></canvas></div>
+            <div class="fmc-bottom"><span class="fmc-price">$142.00</span><span class="fmc-change down">-0.90%</span></div>
+            <div class="fmc-vol">VOL $1.1M &nbsp; MCAP $6.8B</div>
+          </a>
         </div>
       </div>
-      <!-- Probability display -->
-      <div class="card-prob-row">
-        <div class="card-prob-yes">
-          <span class="card-prob-label">Yes</span>
-          <span class="card-prob-pct outcome-pct" style="color:var(--teal)">72%</span>
-        </div>
-        <div class="card-prob-bar-wrap">
-          <div class="card-prob-bar">
-            <div class="card-prob-fill" style="width:72%"></div>
-          </div>
-        </div>
-        <div class="card-prob-no">
-          <span class="card-prob-pct outcome-pct" style="color:var(--red)">28%</span>
-          <span class="card-prob-label">No</span>
-        </div>
-      </div>
-      <!-- Action buttons -->
-      <div class="card-outcomes">
-        <a href="market.html?id=pswsr-6" class="outcome-btn yes">
-          <span class="outcome-label">Buy Yes</span><span class="outcome-pct">72%</span>
-        </a>
-        <a href="market.html?id=pswsr-6" class="outcome-btn no">
-          <span class="outcome-label">Buy No</span><span class="outcome-pct">28%</span>
-        </a>
-      </div>
-      <!-- Footer stats -->
-      <div class="card-footer-stats">
-        <span class="card-vol">$4.2M Vol.</span>
-        <span class="card-traders card-traders">1,840 traders</span>
-        <span class="card-ends">⏱ 46h left</span>
-      </div>
     </div>
 
-    <!-- MARKET GRID — 2 col, true Polymarket cards -->
+    <!-- PREDICTION MARKETS -->
+    <div class="section-header" style="margin-top:28px">
+      <div class="section-title"><span class="section-title-icon">◈</span> Prediction Markets</div>
+      <a href="market.html?id=pswsr-6" class="section-link">ALL MARKETS →</a>
+    </div>
     <div class="market-grid">
-
-      <!-- Card: LOGOS -->
-      <div class="market-card" data-market-id="logos-week">
+      <div class="market-card featured" data-market-id="pswsr-6">
+        <div class="card-badge">🔥 HOT</div>
         <div class="card-header">
-          <div class="card-icon-wrap logos">🎰</div>
+          <div class="card-icon-wrap pisswasser">🍺</div>
           <div class="card-title-block">
-            <h3 class="card-title">Logos Entertainment stock above $13 by end of week?</h3>
-            <div class="card-meta"><span class="card-tag">Stocks</span><span class="card-tag">Price Target</span></div>
+            <h3 class="card-title">Will Pisswasser stock hit $6.00 before the Madrazzo assassination?</h3>
+            <div class="card-meta"><span class="card-tag">Stocks</span><span class="card-tag">Assassination Play</span></div>
           </div>
         </div>
         <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">61%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:61%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">39%</span><span class="card-prob-label">No</span></div>
+          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">72%</span></div>
+          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:72%"></div></div></div>
+          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">28%</span><span class="card-prob-label">No</span></div>
         </div>
         <div class="card-outcomes">
-          <a href="market.html?id=logos-week" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">61%</span></a>
-          <a href="market.html?id=logos-week" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">39%</span></a>
+          <a href="market.html?id=pswsr-6" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">72%</span></a>
+          <a href="market.html?id=pswsr-6" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">28%</span></a>
         </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$1.8M Vol.</span>
-          <span class="card-traders">920 traders</span>
-          <span class="card-ends">⏱ 3d 12h</span>
-        </div>
+        <div class="card-footer-stats"><span class="card-vol">$4.2M Vol.</span><span class="card-traders">1,840 traders</span><span class="card-countdown card-ends">⏱ 46h</span></div>
       </div>
-
-      <!-- Card: SNFB Heist -->
       <div class="market-card" data-market-id="snfb-heist">
         <div class="card-header">
           <div class="card-icon-wrap snfb">🏦</div>
@@ -198,39 +280,8 @@
           <a href="market.html?id=snfb-heist" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">38%</span></a>
           <a href="market.html?id=snfb-heist" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">62%</span></a>
         </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$3.1M Vol.</span>
-          <span class="card-traders">2,100 traders</span>
-          <span class="card-ends">⏱ 2h left</span>
-        </div>
+        <div class="card-footer-stats"><span class="card-vol">$3.1M Vol.</span><span class="card-traders">2,100 traders</span><span class="card-countdown card-ends">⏱ 2h</span></div>
       </div>
-
-      <!-- Card: LURE ROI -->
-      <div class="market-card" data-market-id="lure-roi">
-        <div class="card-header">
-          <div class="card-icon-wrap lure">🎣</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Lure & Reel — best ROI business in Mariana County?</h3>
-            <div class="card-meta"><span class="card-tag">Properties</span><span class="card-tag">ROI</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">83%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:83%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">17%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=lure-roi" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">83%</span></a>
-          <a href="market.html?id=lure-roi" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">17%</span></a>
-        </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$540K Vol.</span>
-          <span class="card-traders">310 traders</span>
-          <span class="card-ends">⏱ 7d</span>
-        </div>
-      </div>
-
-      <!-- Card: ALCRYS accident -->
       <div class="market-card" data-market-id="alcrys-accident">
         <div class="card-header">
           <div class="card-icon-wrap alcrys">🍬</div>
@@ -248,64 +299,8 @@
           <a href="market.html?id=alcrys-accident" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">29%</span></a>
           <a href="market.html?id=alcrys-accident" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">71%</span></a>
         </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$2.4M Vol.</span>
-          <span class="card-traders">1,240 traders</span>
-          <span class="card-ends">⏱ 4d</span>
-        </div>
+        <div class="card-footer-stats"><span class="card-vol">$2.4M Vol.</span><span class="card-traders">1,240 traders</span><span class="card-countdown card-ends">⏱ 4d</span></div>
       </div>
-
-      <!-- Card: VCPROP -->
-      <div class="market-card" data-market-id="vcprop-150">
-        <div class="card-header">
-          <div class="card-icon-wrap vcprop">🌴</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Vice Beach penthouse — price above $150K this week?</h3>
-            <div class="card-meta"><span class="card-tag">Properties</span><span class="card-tag">Price Target</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">47%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:47%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">53%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=vcprop-150" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">47%</span></a>
-          <a href="market.html?id=vcprop-150" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">53%</span></a>
-        </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$1.1M Vol.</span>
-          <span class="card-traders">640 traders</span>
-          <span class="card-ends">⏱ 3d</span>
-        </div>
-      </div>
-
-      <!-- Card: AGTR dip -->
-      <div class="market-card" data-market-id="agtr-dip">
-        <div class="card-header">
-          <div class="card-icon-wrap agtr">🚤</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Airgator — stock dips below $5 after Grassrivers ruling?</h3>
-            <div class="card-meta"><span class="card-tag">Stocks</span><span class="card-tag">Assassination Play</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">55%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:55%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">45%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=agtr-dip" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">55%</span></a>
-          <a href="market.html?id=agtr-dip" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">45%</span></a>
-        </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$670K Vol.</span>
-          <span class="card-traders">390 traders</span>
-          <span class="card-ends">⏱ 6d</span>
-        </div>
-      </div>
-
-      <!-- Card: MGNOT -->
       <div class="market-card" data-market-id="mgnot-leonidaman">
         <div class="card-header">
           <div class="card-icon-wrap mgnot">📺</div>
@@ -323,59 +318,57 @@
           <a href="market.html?id=mgnot-leonidaman" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">91%</span></a>
           <a href="market.html?id=mgnot-leonidaman" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">9%</span></a>
         </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$310K Vol.</span>
-          <span class="card-traders">180 traders</span>
-          <span class="card-ends">⏱ 5d</span>
-        </div>
+        <div class="card-footer-stats"><span class="card-vol">$310K Vol.</span><span class="card-traders">180 traders</span><span class="card-countdown card-ends">⏱ 5d</span></div>
       </div>
-
-      <!-- Card: DKARM contract -->
-      <div class="market-card" data-market-id="dkarm-contract">
-        <div class="card-header">
-          <div class="card-icon-wrap duke">🔫</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Duke Arms wins second Leonida State Police contract this year?</h3>
-            <div class="card-meta"><span class="card-tag">Businesses</span><span class="card-tag">Corporate</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">71%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:71%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">29%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=duke-kelly" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">71%</span></a>
-          <a href="market.html?id=duke-kelly" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">29%</span></a>
-        </div>
-        <div class="card-footer-stats">
-          <span class="card-vol">$740K Vol.</span>
-          <span class="card-traders">360 traders</span>
-          <span class="card-ends">⏱ 28d</span>
-        </div>
-      </div>
-
-    </div><!-- end market-grid -->
-
-    <div class="load-more-wrap">
-      <a href="stocks.html" class="btn-load-more">View All Markets →</a>
     </div>
-  </section>
+    <div class="load-more-wrap"><a href="market.html?id=pswsr-6" class="btn-load-more">View All Prediction Markets →</a></div>
+  </div>
 
   <!-- RIGHT SIDEBAR -->
-  <aside class="sidebar-right">
-    <div class="widget">
-      <div class="widget-header"><span class="widget-title">Leonida Market News</span><span class="live-dot"></span></div>
-      <div class="news-feed">
-        <a href="news.html" class="news-item"><span class="news-item-hot">🔥 HOT</span><p class="news-text">Assassination window OPEN — Madrazzo confirmed. PSWSR ▲2.3%</p></a>
-        <a href="news.html" class="news-item"><span class="news-time">8m ago</span><p class="news-text">Duke Arms secures $420M defense contract with Leonida State Police</p></a>
-        <a href="news.html" class="news-item"><span class="news-time">15m ago</span><p class="news-text">Pisswasser brewery expansion confirmed in Vice-Dale — analysts bullish</p></a>
-        <a href="news.html" class="news-item"><span class="news-time">31m ago</span><p class="news-text">Sinfrontera Bank raises rates; mortgage market cools in Mariana</p></a>
-        <a href="news.html" class="news-item"><span class="news-time">1h ago</span><p class="news-text">Allied Crystal Q3 output down 12% — Ambrosia stocks slide</p></a>
-      </div>
-      <a href="news.html" class="widget-footer-link">View full news feed →</a>
+  <div class="dash-sidebar">
+    <!-- LEONIDA NEWS -->
+    <div class="news-widget">
+      <div class="news-widget-header"><span class="news-widget-title">Leonida News</span><span class="live-dot"></span></div>
+      <a href="news.html" class="news-widget-item">
+        <div class="nwi-meta"><span class="nwi-delta down">▼ -3.40%</span><span class="nwi-time">4M</span></div>
+        <div class="nwi-headline">Sinfrontera National Bank halts trading after vault breach in downtown Vice City</div>
+        <div class="nwi-tickers"><span class="nwi-ticker">SNFB</span><span class="nwi-ticker">DKARM</span></div>
+      </a>
+      <a href="news.html" class="news-widget-item">
+        <div class="nwi-meta"><span class="nwi-delta up">▲ +2.10%</span><span class="nwi-time">14M</span></div>
+        <div class="nwi-headline">Pisswasser unveils 'Vice Lite' SKU ahead of summer regatta season</div>
+        <div class="nwi-tickers"><span class="nwi-ticker">PSWSR</span></div>
+      </a>
+      <a href="news.html" class="news-widget-item">
+        <div class="nwi-meta"><span class="nwi-delta down">▼ -5.70%</span><span class="nwi-time">27M</span></div>
+        <div class="nwi-headline">Allied Crystal refinery strike enters fourth day; output cut by 60%</div>
+        <div class="nwi-tickers"><span class="nwi-ticker">ALCRYS</span></div>
+      </a>
+      <a href="news.html" class="news-widget-item">
+        <div class="nwi-meta"><span class="nwi-delta up">▲ +6.80%</span><span class="nwi-time">58M</span></div>
+        <div class="nwi-headline">Duke Arms wins three-year defense contract worth $1.2B</div>
+        <div class="nwi-tickers"><span class="nwi-ticker">DKARM</span><span class="nwi-ticker">LNLOT</span></div>
+      </a>
+      <a href="news.html" class="news-widget-item">
+        <div class="nwi-meta"><span class="nwi-delta up">▲ +4.20%</span><span class="nwi-time">92M</span></div>
+        <div class="nwi-headline">Logos Motor Group teases retro V8 supercar at Vice Auto Expo</div>
+        <div class="nwi-tickers"><span class="nwi-ticker">LOGOS</span></div>
+      </a>
+      <a href="news.html" class="news-widget-footer">ALL NEWS →</a>
     </div>
 
+    <!-- ACTIVE HEISTS -->
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Active Heists</span><span class="live-dot"></span></div>
+      <div class="movers-list">
+        <a href="heists.html" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11.5px;white-space:normal;line-height:1.3">Sinfrontera Vault Job</span><span class="badge badge-red" style="font-size:9px">HARD</span></a>
+        <a href="heists.html" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11.5px;white-space:normal;line-height:1.3">Ambrosia Refinery Sabotage</span><span class="badge badge-gold" style="font-size:9px">MED</span></a>
+        <a href="heists.html" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11.5px;white-space:normal;line-height:1.3">Duke Arms Container Hijack</span><span class="badge badge-green" style="font-size:9px">EASY</span></a>
+      </div>
+      <a href="heists.html" class="widget-footer-link">ALL HEISTS →</a>
+    </div>
+
+    <!-- TOP MOVERS -->
     <div class="widget">
       <div class="widget-header"><span class="widget-title">Top Movers</span></div>
       <div class="movers-list">
@@ -385,56 +378,88 @@
         <a href="stock-detail.html?sym=LOGOS" class="mover-row" data-sym="LOGOS"><span class="mover-name">LOGOS</span><span class="mover-price">$11.20</span><span class="mover-delta down">▼ 1.1%</span></a>
         <a href="stock-detail.html?sym=LURE" class="mover-row" data-sym="LURE"><span class="mover-name">LURE</span><span class="mover-price">$9.77</span><span class="mover-delta up">▲ 1.2%</span></a>
       </div>
-      <a href="stocks.html" class="widget-footer-link">Full stock table →</a>
+      <a href="stocks.html" class="widget-footer-link">FULL TABLE →</a>
     </div>
 
+    <!-- QUICK ROI -->
     <div class="widget">
       <div class="widget-header"><span class="widget-title">Quick ROI Calc</span></div>
       <div class="calc-body">
         <label class="calc-label">Business Type</label>
-        <select class="calc-select" id="biz-type">
-          <option>Nightclub</option><option>Bunker</option><option>Coke Lab</option>
-          <option>Counterfeit Cash</option><option>Weed Farm</option>
-        </select>
+        <select class="calc-select" id="biz-type"><option>Nightclub</option><option>Bunker</option><option>Coke Lab</option><option>Counterfeit Cash</option><option>Weed Farm</option></select>
         <label class="calc-label">Investment ($)</label>
         <input type="number" class="calc-input" id="invest-amt" value="1750000"/>
         <button class="btn-calc" onclick="calcROI()">Calculate ROI</button>
-        <div class="calc-result">
-          <span class="result-label">Est. Weekly Return</span>
-          <span class="result-value" id="result-val">—</span>
-        </div>
+        <div class="calc-result"><span class="result-label">Est. Weekly Return</span><span class="result-value" id="result-val">—</span></div>
       </div>
     </div>
-  </aside>
+  </div>
 </div>
+</div></div>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a>
-      <p class="footer-tagline">The Leonida Market Terminal — Bloomberg for criminals.</p>
+      <a href="index.html" class="logo"><div class="logo-mark">◈</div><div class="logo-text-wrap"><div class="logo-name">LEONIDAVICE</div><div class="logo-sub">Terminal · V2.0</div></div></a>
+      <p class="footer-tagline">The Bloomberg Terminal for criminals. Fan-made economic simulator for GTA VI's state of Leonida.</p>
     </div>
     <div class="footer-links">
-      <div class="footer-col"><p class="footer-col-title">Markets</p><a href="stocks.html">Stocks</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="heists.html">Heists</a></div>
-      <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="leaderboard.html">Leaderboard</a><a href="premium.html">Premium</a></div>
+      <div class="footer-col"><p class="footer-col-title">Terminal</p><a href="stocks.html">Markets</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="heists.html">Heists</a></div>
+      <div class="footer-col"><p class="footer-col-title">Read</p><a href="news.html">Leonida News</a><a href="leaderboard.html">Watchlist</a><a href="about.html">About</a></div>
+      <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="premium.html">Premium</a></div>
       <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale County</a><a href="region.html?r=ambrosia">Ambrosia County</a><a href="region.html?r=kelly">Kelly County</a><a href="region.html?r=mariana">Mariana County</a></div>
-      <div class="footer-col"><p class="footer-col-title">About</p><a href="about.html">About</a><a href="about.html#disclaimer">Disclaimer</a><a href="about.html#legal">Legal</a></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 LeonidaVice.com — Fan site. Not affiliated with Rockstar Games or Take-Two Interactive. All in-game assets are fictional.</p>
+    <span>© 2026 LeonidaVice Terminal · A fan-made economic simulator · Not affiliated with Rockstar Games or Take-Two Interactive · Leonida Credits (Ṁ) have no real-world monetary value</span>
+    <span class="footer-status"><span class="footer-status-dot"></span>ALL SYSTEMS NOMINAL</span>
   </div>
 </footer>
 
-<!-- Compact mode toggle for second-monitor use -->
 <button class="compact-toggle" onclick="document.body.classList.toggle('compact-mode')" title="Toggle compact mode">⊞</button>
 
 <script src="data-config.js"></script>
 <script src="app.js"></script>
 <script src="lmsr.js"></script>
 <script src="game-loop.js"></script>
-</body>
-</html>
-
-
-
+<script>
+function filterFeatured(sector, btn) {
+  document.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.featured-market-row').forEach(row => {
+    row.style.display = (sector === 'ALL' || row.dataset.sector === sector) ? '' : 'none';
+  });
+}
+// Hero background chart
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('hero-bg-chart');
+  if (!canvas) return;
+  canvas.width = canvas.offsetWidth || 600;
+  canvas.height = canvas.offsetHeight || 260;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  const pts = [];
+  let v = 0.4;
+  for (let i = 0; i < 120; i++) { v += (Math.random()-0.47)*0.03; v=Math.max(0.1,Math.min(0.9,v)); pts.push(v); }
+  const min = Math.min(...pts), max = Math.max(...pts), range = max-min||1;
+  ctx.beginPath();
+  pts.forEach((p,i) => {
+    const x = (i/(pts.length-1))*w;
+    const y = h - ((p-min)/range)*(h*0.7) - h*0.1;
+    i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+  });
+  ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
+  const g = ctx.createLinearGradient(0,0,0,h);
+  g.addColorStop(0,'rgba(0,212,170,0.25)'); g.addColorStop(1,'rgba(0,212,170,0)');
+  ctx.fillStyle = g; ctx.fill();
+  ctx.beginPath();
+  pts.forEach((p,i) => {
+    const x = (i/(pts.length-1))*w;
+    const y = h - ((p-min)/range)*(h*0.7) - h*0.1;
+    i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+  });
+  ctx.strokeStyle = 'rgba(0,212,170,0.6)'; ctx.lineWidth = 2; ctx.stroke();
+});
+</script>
+</body></html>
