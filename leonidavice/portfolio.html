@@ -42,6 +42,8 @@
       <span class="wallet-nav-icon">Ṁ</span>
       <div><div class="wallet-balance">500</div><div class="wallet-label">Credits</div></div>
     </a>
+    <span class="streak-display" style="display:none"></span>
+    <span class="user-badge-nav"></span>
     <a href="portfolio.html" class="btn-primary">Portfolio</a>
     <a href="premium.html" class="btn-ghost">Go Premium</a>
   </div>
@@ -207,6 +209,7 @@
 <script src="data-config.js"></script>
 <script src="app.js"></script>
 <script src="lmsr.js"></script>
+<script src="game-loop.js"></script>
 <script>
 function claimDaily() {
   const claimed = LV_LMSR.claimDailyReward();
@@ -351,3 +354,6 @@ function renderPortfolioPage() {
 document.addEventListener('DOMContentLoaded', renderPortfolioPage);
 </script>
 </body></html>
+
+
+

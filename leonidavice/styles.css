@@ -1554,3 +1554,355 @@ body.compact-mode .mover-row { padding: 7px 12px; }
     transform: translateY(0) scale(1);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   GAME LOOP UI — game-loop.js styles
+   Resolution overlays, payout animations, streak, badges,
+   big toast, urgency states, new market injection
+═══════════════════════════════════════════════════════════════ */
+
+/* ── RESOLVED CARD ── */
+.market-card-resolved {
+  opacity: 0.72;
+  pointer-events: none;
+  position: relative;
+}
+.resolve-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(8,8,16,0.82);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  pointer-events: none;
+  z-index: 2;
+}
+.resolve-badge {
+  font-size: 15px;
+  font-weight: 900;
+  padding: 6px 18px;
+  border-radius: 30px;
+  letter-spacing: 0.08em;
+}
+.resolve-yes {
+  background: var(--teal-dim);
+  color: var(--teal);
+  border: 1px solid rgba(0,212,170,0.4);
+}
+.resolve-no {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid rgba(255,64,96,0.4);
+}
+.resolve-reason {
+  font-size: 11px;
+  color: var(--text-2);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 220px;
+}
+
+/* ── URGENCY STATE ── */
+.market-card-urgent {
+  border-color: rgba(255,209,102,0.5) !important;
+  box-shadow: 0 0 20px rgba(255,209,102,0.12) !important;
+  animation: urgency-pulse 2s ease-in-out infinite;
+}
+@keyframes urgency-pulse {
+  0%,100% { box-shadow: 0 0 20px rgba(255,209,102,0.12); }
+  50%      { box-shadow: 0 0 32px rgba(255,209,102,0.28); }
+}
+.card-countdown {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text-3);
+  transition: color 0.3s;
+}
+
+/* ── NEW MARKET CARD ANIMATION ── */
+.market-card-new {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.97);
+  transition: all 0.4s cubic-bezier(0.34,1.4,0.64,1);
+  border-color: rgba(0,212,170,0.4) !important;
+}
+.market-card-new-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── BIG TOAST (resolution events) ── */
+.lv-big-toast {
+  position: fixed;
+  top: calc(var(--ticker-h) + var(--nav-h) + var(--stats-h) + 16px);
+  right: 20px;
+  z-index: 9999;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  width: 340px;
+  max-width: calc(100vw - 40px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transform: translateX(380px);
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.34,1.4,0.64,1);
+}
+.lv-big-toast-show {
+  transform: translateX(0);
+  opacity: 1;
+}
+.lv-big-toast-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.lv-big-toast-content { flex: 1; min-width: 0; }
+.lv-big-toast-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.lv-big-toast-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.lv-big-toast-body {
+  font-size: 11.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.lv-big-toast-close {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 2px;
+  transition: color 0.15s;
+}
+.lv-big-toast-close:hover { color: var(--text); }
+
+/* ── PAYOUT FLOAT ANIMATION ── */
+.payout-float {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--teal);
+  text-shadow: 0 0 20px var(--teal-glow);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transform: translateY(0) translateX(-50%);
+  transition: none;
+  white-space: nowrap;
+}
+.payout-float-go {
+  animation: payout-rise 1.6s cubic-bezier(0.2,0.8,0.4,1) forwards;
+}
+@keyframes payout-rise {
+  0%   { opacity: 0;   transform: translateY(0)    translateX(-50%) scale(0.8); }
+  15%  { opacity: 1;   transform: translateY(-10px) translateX(-50%) scale(1.1); }
+  70%  { opacity: 1;   transform: translateY(-60px) translateX(-50%) scale(1); }
+  100% { opacity: 0;   transform: translateY(-90px) translateX(-50%) scale(0.9); }
+}
+
+/* ── WALLET FLASH ── */
+.wallet-flash {
+  animation: wallet-flash-anim 0.5s ease-in-out;
+}
+@keyframes wallet-flash-anim {
+  0%,100% { color: var(--teal); }
+  50%     { color: #fff; text-shadow: 0 0 16px var(--teal); }
+}
+
+/* ── STREAK DISPLAY IN NAV ── */
+.streak-display {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--gold);
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255,209,102,0.1);
+  border: 1px solid rgba(255,209,102,0.2);
+  white-space: nowrap;
+}
+
+/* ── BADGE IN NAV ── */
+.user-badge-nav {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+/* ── POSITION BADGE ON CARD ── */
+.card-position-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.yes-pos {
+  background: var(--teal-dim);
+  color: var(--teal);
+  border: 1px solid rgba(0,212,170,0.25);
+}
+.no-pos {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid rgba(255,64,96,0.25);
+}
+
+/* ── STREAK BONUS BANNER (shown on market cards when streak active) ── */
+.streak-bonus-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 9.5px;
+  font-weight: 800;
+  background: rgba(255,209,102,0.1);
+  color: var(--gold);
+  border: 1px solid rgba(255,209,102,0.2);
+}
+
+/* ── RESOLUTION HISTORY FEED (portfolio page) ── */
+.resolve-feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.resolve-feed-item:last-child { border-bottom: none; }
+.resolve-feed-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.resolve-feed-icon.win  { background: var(--teal-dim); }
+.resolve-feed-icon.loss { background: var(--red-bg); }
+.resolve-feed-icon.reward { background: rgba(255,209,102,0.1); }
+.resolve-feed-text { flex: 1; min-width: 0; }
+.resolve-feed-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.resolve-feed-meta {
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+.resolve-feed-amount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.resolve-feed-amount.win    { color: var(--teal); }
+.resolve-feed-amount.loss   { color: var(--red); }
+.resolve-feed-amount.reward { color: var(--gold); }
+
+/* ── BADGE DISPLAY (portfolio / leaderboard) ── */
+.badge-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 800;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+/* ── NOTIFICATION PROMPT ── */
+.notif-prompt {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 9000;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  max-width: 280px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.notif-prompt-show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.notif-prompt-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.notif-prompt-body {
+  font-size: 11px;
+  color: var(--text-2);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.notif-prompt-btns {
+  display: flex;
+  gap: 8px;
+}
+.notif-prompt-yes {
+  flex: 1;
+  padding: 6px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--teal), var(--cyan));
+  color: #080810;
+  border: none;
+  cursor: pointer;
+}
+.notif-prompt-no {
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--surface-3);
+  color: var(--text-3);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
