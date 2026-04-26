@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>LeonidaVice — The Bloomberg Terminal for Criminals</title>
+  <title>LeonidaVice — The Leonida Market Terminal</title>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -33,372 +33,407 @@
   <span class="tick down"><span class="tick-sym">VCPROP</span> <span class="tick-val">$142.00</span> <span class="tick-delta">▼0.90%</span></span>
 </div></div>
 
-<!-- NAV -->
-<nav class="nav"><div class="nav-inner">
-  <a href="index.html" class="logo">
-    <div class="logo-mark">◈</div>
-    <div class="logo-text-wrap"><div class="logo-name">LEONIDAVICE</div><div class="logo-sub">Terminal · V2.0</div></div>
-  </a>
-  <div class="nav-links">
-    <a href="index.html" class="nav-link active">Dashboard</a>
-    <a href="stocks.html" class="nav-link">Markets</a>
-    <a href="properties.html" class="nav-link">Properties</a>
-    <a href="businesses.html" class="nav-link">Businesses</a>
-    <a href="heists.html" class="nav-link">Heists</a>
-    <a href="news.html" class="nav-link">News</a>
-    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
-    <a href="about.html" class="nav-link">About</a>
-  </div>
-  <div class="nav-right">
-    <div class="nav-live"><span class="nav-live-dot"></span><span class="nav-live-text">LIVE</span><span class="nav-live-count" data-traders>4,333 online</span></div>
-    <div class="nav-search"><span class="nav-search-icon">⌕</span><input type="text" placeholder="Search ticker, asset, news…"/></div>
-    <a href="portfolio.html" class="wallet-nav-item" title="My Leonida Credits">
-      <span class="wallet-nav-icon">Ṁ</span>
-      <div><div class="wallet-balance">500</div><div class="wallet-label">Credits</div></div>
+<div class="app-shell">
+
+  <!-- TOP BAR -->
+  <div class="app-topbar">
+    <a href="index.html" class="topbar-logo">
+      <div class="topbar-logo-mark">◈</div>
+      <div class="topbar-logo-name">LeonidaVice</div>
     </a>
-    <span class="streak-display" style="display:none"></span>
-    <span class="user-badge-nav"></span>
-    <a href="premium.html" class="btn-deposit">DEPOSIT</a>
+    <div class="topbar-tabs">
+      <a href="index.html" class="topbar-tab active">Dashboard</a>
+      <a href="stocks.html" class="topbar-tab active-pink">⚡ BAWSAQ Live</a>
+      <a href="heists.html" class="topbar-tab">Heist Plays</a>
+      <a href="news.html" class="topbar-tab">The Wire</a>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-live"><span class="topbar-live-dot"></span><span data-traders>4,333</span> online</div>
+      <a href="portfolio.html" class="topbar-credits">
+        <span class="topbar-credits-sym">Ṁ</span>
+        <span class="topbar-credits-bal wallet-balance">500</span>
+      </a>
+      <div class="topbar-user">
+        <span class="topbar-user-name" id="tb-username">—</span>
+        <span class="user-badge-nav topbar-user-badge"></span>
+      </div>
+      <a href="premium.html" class="btn-deposit-top">DEPOSIT</a>
+    </div>
   </div>
-</div></nav>
 
-<div class="page-wrap"><div class="page-inner">
+  <!-- LEFT SIDEBAR -->
+  <aside class="app-sidebar">
+    <div class="sidebar-search">
+      <span class="sidebar-search-icon">⌕</span>
+      <input type="text" placeholder="Search ticker, asset, news…"/>
+    </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <canvas class="hero-chart-bg" id="hero-bg-chart"></canvas>
-    <div class="hero-eyebrow">LEONIDA BOURSE — LIVE</div>
-    <div class="hero-title">The Bloomberg Terminal<br><span class="accent">for criminals.</span></div>
-    <div class="hero-sub">Real-time fictional markets, property ROI, business profitability and heist plays for GTA VI's state of Leonida. Trade the chaos. Front-run the chaos. Become the chaos.</div>
-    <div class="hero-ctas">
-      <a href="stocks.html" class="btn-hero-primary">OPEN TERMINAL →</a>
-      <a href="heists.html" class="btn-hero-ghost">⚡ HEIST PLAYS</a>
+    <div class="sidebar-section-label">Navigation</div>
+    <a href="index.html" class="sidebar-nav-item active">
+      <span class="sidebar-nav-icon">◈</span> Dashboard
+    </a>
+    <a href="stocks.html" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">��</span> Markets
+      <span class="sidebar-nav-badge">LIVE</span>
+    </a>
+    <a href="properties.html" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">🏢</span> Properties
+    </a>
+    <a href="businesses.html" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">💼</span> Businesses
+    </a>
+    <a href="heists.html" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">🎯</span> Heist Plays
+    </a>
+    <a href="news.html" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">📡</span> The Wire
+    </a>
+    <a href="leaderboard.html" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">🏆</span> Leaderboard
+    </a>
+    <a href="portfolio.html" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">💳</span> My Portfolio
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section-label">Regions</div>
+    <a href="region.html?r=vice-dale" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">🌆</span> Vice-Dale County
+    </a>
+    <a href="region.html?r=ambrosia" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">🏭</span> Ambrosia County
+    </a>
+    <a href="region.html?r=kelly" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">⚓</span> Kelly County
+    </a>
+    <a href="region.html?r=mariana" class="sidebar-nav-item">
+      <span class="sidebar-nav-icon">🌊</span> Mariana County
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section-label">Watchlist <span style="float:right;cursor:pointer;color:var(--pink)">+</span></div>
+    <a href="stock-detail.html?sym=PSWSR" class="sidebar-watchlist-item">
+      <div class="sidebar-wl-icon" style="background:rgba(255,209,102,0.1)">��</div>
+      <div class="sidebar-wl-info">
+        <div class="sidebar-wl-sym">PSWSR</div>
+        <div class="sidebar-wl-name">Pisswasser Brewing</div>
+      </div>
+      <div class="sidebar-wl-right">
+        <div class="sidebar-wl-price" data-wl-price="PSWSR">$4.82</div>
+        <div class="sidebar-wl-change up" data-wl-change="PSWSR">▲2.3%</div>
+      </div>
+    </a>
+    <a href="stock-detail.html?sym=DKARM" class="sidebar-watchlist-item">
+      <div class="sidebar-wl-icon" style="background:rgba(255,64,96,0.1)">🔫</div>
+      <div class="sidebar-wl-info">
+        <div class="sidebar-wl-sym">DKARM</div>
+        <div class="sidebar-wl-name">Duke Arms</div>
+      </div>
+      <div class="sidebar-wl-right">
+        <div class="sidebar-wl-price" data-wl-price="DKARM">$34.15</div>
+        <div class="sidebar-wl-change up" data-wl-change="DKARM">▲3.9%</div>
+      </div>
+    </a>
+    <a href="stock-detail.html?sym=SNFB" class="sidebar-watchlist-item">
+      <div class="sidebar-wl-icon" style="background:rgba(0,212,170,0.1)">🏦</div>
+      <div class="sidebar-wl-info">
+        <div class="sidebar-wl-sym">SNFB</div>
+        <div class="sidebar-wl-name">Sinfrontera Bank</div>
+      </div>
+      <div class="sidebar-wl-right">
+        <div class="sidebar-wl-price" data-wl-price="SNFB">$88.40</div>
+        <div class="sidebar-wl-change up" data-wl-change="SNFB">▲0.7%</div>
+      </div>
+    </a>
+    <a href="stock-detail.html?sym=AGTR" class="sidebar-watchlist-item">
+      <div class="sidebar-wl-icon" style="background:rgba(0,229,255,0.08)">🚤</div>
+      <div class="sidebar-wl-info">
+        <div class="sidebar-wl-sym">AGTR</div>
+        <div class="sidebar-wl-name">Airgator Marine</div>
+      </div>
+      <div class="sidebar-wl-right">
+        <div class="sidebar-wl-price" data-wl-price="AGTR">$6.33</div>
+        <div class="sidebar-wl-change down" data-wl-change="AGTR">▼2.8%</div>
+      </div>
+    </a>
+    <a href="stock-detail.html?sym=ALCRYS" class="sidebar-watchlist-item">
+      <div class="sidebar-wl-icon" style="background:rgba(255,150,50,0.1)">🍬</div>
+      <div class="sidebar-wl-info">
+        <div class="sidebar-wl-sym">ALCRYS</div>
+        <div class="sidebar-wl-name">Allied Crystal</div>
+      </div>
+      <div class="sidebar-wl-right">
+        <div class="sidebar-wl-price" data-wl-price="ALCRYS">$22.60</div>
+        <div class="sidebar-wl-change down" data-wl-change="ALCRYS">▼0.5%</div>
+      </div>
+    </a>
+
+    <div class="sidebar-divider"></div>
+    <a href="about.html" class="sidebar-nav-item" style="margin-top:auto">
+      <span class="sidebar-nav-icon">ℹ</span> About
+    </a>
+    <a href="premium.html" class="sidebar-nav-item" style="color:var(--cyan)">
+      <span class="sidebar-nav-icon">⚡</span> Go Premium
+    </a>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="app-main">
+
+    <!-- DASHBOARD HEADER -->
+    <div class="dash-header">
+      <div class="dash-header-left">
+        <div class="dash-eyebrow">LEONIDA STOCK EXCHANGE · BAWSAQ</div>
+        <div class="dash-title">LeonidaVice <span class="accent">Terminal</span></div>
+        <div class="dash-subtitle">Real-time fictional markets for GTA VI's state of Leonida · Simulation ticking every 2.5s</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="heists.html" style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border);text-decoration:none;transition:all 0.15s" onmouseover="this.style.borderColor='var(--pink)'" onmouseout="this.style.borderColor='var(--border)'">⚡ Heist Plays</a>
+        <a href="stocks.html" style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:800;background:var(--cyan);color:#080810;text-decoration:none;transition:all 0.15s">Open Terminal →</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-stat-tile">
-      <div class="hero-stat-label">Total MCAP</div>
-      <div class="hero-stat-value" data-stat="market-cap">$16.3B</div>
-      <div class="hero-stat-sub">6 gainers · 4 losers</div>
+
+    <!-- MARKET OVERVIEW PANEL -->
+    <div class="market-overview">
+      <div class="market-overview-top">
+        <div class="mov-stat">
+          <div class="mov-stat-label">Total Market Cap</div>
+          <div class="mov-stat-value" data-stat="market-cap">$16.3B</div>
+          <div class="mov-stat-sub"><span class="mov-stat-delta up">▲ 1.4%</span> 6 gainers · 4 losers</div>
+        </div>
+        <div class="mov-stat">
+          <div class="mov-stat-label">24H Volume</div>
+          <div class="mov-stat-value">$218M</div>
+          <div class="mov-stat-sub"><span class="mov-stat-delta up">▲ 8.2%</span> Live tick · 2.5s refresh</div>
+        </div>
+        <div class="mov-stat">
+          <div class="mov-stat-label">Top Gainer</div>
+          <div class="mov-stat-value teal">DKARM</div>
+          <div class="mov-stat-sub"><span class="mov-stat-delta up">+3.90%</span> · $34.15</div>
+        </div>
+        <div class="mov-stat">
+          <div class="mov-stat-label">Top Loser</div>
+          <div class="mov-stat-value red">AGTR</div>
+          <div class="mov-stat-sub"><span class="mov-stat-delta down">-2.80%</span> · $6.33</div>
+        </div>
+      </div>
+
+      <!-- CHART -->
+      <div class="chart-area">
+        <div class="chart-area-header">
+          <div class="chart-area-title">Leonida Market Index — Composite</div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--text-3)">
+              <span class="live-dot"></span> Live
+            </div>
+            <div class="chart-timeframes">
+              <button class="chart-tf active">1D</button>
+              <button class="chart-tf">3D</button>
+              <button class="chart-tf">1W</button>
+              <button class="chart-tf">1M</button>
+              <button class="chart-tf">All</button>
+            </div>
+          </div>
+        </div>
+        <canvas id="main-index-chart" class="main-chart-canvas" height="160"></canvas>
+      </div>
+
+      <!-- OBJECTIVES ROW -->
+      <div class="objectives-row">
+        <div class="obj-item">
+          <div class="obj-label">Active Markets</div>
+          <div class="obj-value">142</div>
+          <div class="obj-delta up">▲ 3</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-label">Live Traders</div>
+          <div class="obj-value" data-traders>3,841</div>
+          <div class="obj-delta up">▲ 12%</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-label">Assassination</div>
+          <div class="obj-value" style="color:var(--teal);font-size:12px;animation:pulse-text 2s ease-in-out infinite">OPEN</div>
+          <div class="obj-delta up">Madrazzo</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-label">PSWSR Target</div>
+          <div class="obj-value">72%</div>
+          <div class="obj-delta up">YES favored</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-label">SNFB Heist</div>
+          <div class="obj-value">38%</div>
+          <div class="obj-delta down">NO favored</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-label">Avg Win Rate</div>
+          <div class="obj-value">74%</div>
+          <div class="obj-delta up">▲ 2%</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-label">Top Prediction</div>
+          <div class="obj-value" style="font-size:12px">Leonida Man</div>
+          <div class="obj-delta up">91% YES</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-label">Your Balance</div>
+          <div class="obj-value teal wallet-balance" style="font-size:14px">Ṁ500</div>
+          <div class="obj-delta" style="color:var(--text-3)">Credits</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-stat-tile">
-      <div class="hero-stat-label">24H Volume</div>
-      <div class="hero-stat-value">$218M</div>
-      <div class="hero-stat-sub">Live tick · 2.5s refresh</div>
+
+    <!-- MARKETS TABLE -->
+    <div class="dash-markets">
+      <div class="dash-markets-header">
+        <div class="dash-markets-title">BAWSAQ · Live Markets</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="filter-pills" style="display:flex;gap:4px">
+            <button class="filter-pill active" style="padding:4px 10px;font-size:10.5px" onclick="filterDashMarkets('ALL',this)">ALL</button>
+            <button class="filter-pill" style="padding:4px 10px;font-size:10.5px" onclick="filterDashMarkets('Leisure',this)">LEISURE</button>
+            <button class="filter-pill" style="padding:4px 10px;font-size:10.5px" onclick="filterDashMarkets('Finance',this)">FINANCE</button>
+            <button class="filter-pill" style="padding:4px 10px;font-size:10.5px" onclick="filterDashMarkets('Defense',this)">DEFENSE</button>
+            <button class="filter-pill" style="padding:4px 10px;font-size:10.5px" onclick="filterDashMarkets('Media',this)">MEDIA</button>
+          </div>
+          <a href="stocks.html" style="font-size:11px;font-weight:700;color:var(--pink);text-decoration:none">View All →</a>
+        </div>
+      </div>
+      <table class="dash-markets-table" id="dash-mkt-table">
+        <thead>
+          <tr>
+            <th style="width:36px"></th>
+            <th>% CHANGE</th>
+            <th>PRICE</th>
+            <th>MARKET CAP</th>
+            <th>VOLUME</th>
+            <th>TICKER</th>
+            <th>SECTOR</th>
+            <th>CHART</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-sector="Defense" onclick="location.href='stock-detail.html?sym=DKARM'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-up" data-sym-change="DKARM">▲ 3.90%</td>
+            <td class="dmt-price" data-sym-price="DKARM">$34.15</td>
+            <td class="dmt-vol">$1.8B</td>
+            <td class="dmt-vol">$920K</td>
+            <td><div class="dmt-sym">DKARM</div><div class="dmt-name">Duke Arms Industries</div></td>
+            <td><span class="dmt-sector defense">Defense</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="DKARM" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('dkarm-contract','yes')">Predict</button></td>
+          </tr>
+          <tr data-sector="Leisure" onclick="location.href='stock-detail.html?sym=PSWSR'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-up" data-sym-change="PSWSR">▲ 2.30%</td>
+            <td class="dmt-price" data-sym-price="PSWSR">$4.82</td>
+            <td class="dmt-vol">$312M</td>
+            <td class="dmt-vol">$4.2M</td>
+            <td><div class="dmt-sym">PSWSR</div><div class="dmt-name">Pisswasser Brewing Co.</div></td>
+            <td><span class="dmt-sector leisure">Leisure</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="PSWSR" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('pswsr-6','yes')">Predict</button></td>
+          </tr>
+          <tr data-sector="Finance" onclick="location.href='stock-detail.html?sym=SNFB'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-up" data-sym-change="SNFB">▲ 0.70%</td>
+            <td class="dmt-price" data-sym-price="SNFB">$88.40</td>
+            <td class="dmt-vol">$4.1B</td>
+            <td class="dmt-vol">$3.1M</td>
+            <td><div class="dmt-sym">SNFB</div><div class="dmt-name">Sinfrontera National Bank</div></td>
+            <td><span class="dmt-sector finance">Finance</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="SNFB" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('snfb-heist','no')">Predict</button></td>
+          </tr>
+          <tr data-sector="Leisure" onclick="location.href='stock-detail.html?sym=AGTR'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-down" data-sym-change="AGTR">▼ 2.80%</td>
+            <td class="dmt-price" data-sym-price="AGTR">$6.33</td>
+            <td class="dmt-vol">$210M</td>
+            <td class="dmt-vol">$670K</td>
+            <td><div class="dmt-sym">AGTR</div><div class="dmt-name">Airgator Marine</div></td>
+            <td><span class="dmt-sector leisure">Leisure</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="AGTR" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('agtr-dip','yes')">Predict</button></td>
+          </tr>
+          <tr data-sector="Media" onclick="location.href='stock-detail.html?sym=LOGOS'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-down" data-sym-change="LOGOS">▼ 1.10%</td>
+            <td class="dmt-price" data-sym-price="LOGOS">$11.20</td>
+            <td class="dmt-vol">$890M</td>
+            <td class="dmt-vol">$1.8M</td>
+            <td><div class="dmt-sym">LOGOS</div><div class="dmt-name">Logos Entertainment</div></td>
+            <td><span class="dmt-sector media">Media</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="LOGOS" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('logos-week','no')">Predict</button></td>
+          </tr>
+          <tr data-sector="Energy" onclick="location.href='stock-detail.html?sym=ALCRYS'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-down" data-sym-change="ALCRYS">▼ 0.50%</td>
+            <td class="dmt-price" data-sym-price="ALCRYS">$22.60</td>
+            <td class="dmt-vol">$2.2B</td>
+            <td class="dmt-vol">$2.4M</td>
+            <td><div class="dmt-sym">ALCRYS</div><div class="dmt-name">Allied Crystal Sugar Co.</div></td>
+            <td><span class="dmt-sector energy">Energy</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="ALCRYS" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('alcrys-accident','no')">Predict</button></td>
+          </tr>
+          <tr data-sector="Leisure" onclick="location.href='stock-detail.html?sym=LURE'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-up" data-sym-change="LURE">▲ 1.20%</td>
+            <td class="dmt-price" data-sym-price="LURE">$9.77</td>
+            <td class="dmt-vol">$480M</td>
+            <td class="dmt-vol">$540K</td>
+            <td><div class="dmt-sym">LURE</div><div class="dmt-name">Lure &amp; Reel Outdoors</div></td>
+            <td><span class="dmt-sector leisure">Leisure</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="LURE" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('lure-roi','yes')">Predict</button></td>
+          </tr>
+          <tr data-sector="Finance" onclick="location.href='stock-detail.html?sym=VCPROP'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-down" data-sym-change="VCPROP">▼ 0.90%</td>
+            <td class="dmt-price" data-sym-price="VCPROP">$142.00</td>
+            <td class="dmt-vol">$6.8B</td>
+            <td class="dmt-vol">$1.1M</td>
+            <td><div class="dmt-sym">VCPROP</div><div class="dmt-name">Vice City Properties</div></td>
+            <td><span class="dmt-sector finance">Finance</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="VCPROP" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('vcprop-150','yes')">Predict</button></td>
+          </tr>
+          <tr data-sector="Media" onclick="location.href='stock-detail.html?sym=MGNOT'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-up" data-sym-change="MGNOT">▲ 0.40%</td>
+            <td class="dmt-price" data-sym-price="MGNOT">$18.90</td>
+            <td class="dmt-vol">$640M</td>
+            <td class="dmt-vol">$180K</td>
+            <td><div class="dmt-sym">MGNOT</div><div class="dmt-name">Mega Noticias Network</div></td>
+            <td><span class="dmt-sector media">Media</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="MGNOT" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('mgnot-leonidaman','yes')">Predict</button></td>
+          </tr>
+          <tr data-sector="Finance" onclick="location.href='stock-detail.html?sym=LNLOT'" style="cursor:pointer">
+            <td><span class="td-star">☆</span></td>
+            <td class="dmt-up" data-sym-change="LNLOT">▲ 0.10%</td>
+            <td class="dmt-price" data-sym-price="LNLOT">$1.05</td>
+            <td class="dmt-vol">$88M</td>
+            <td class="dmt-vol">$310K</td>
+            <td><div class="dmt-sym">LNLOT</div><div class="dmt-name">Leonida Lottery Holdings</div></td>
+            <td><span class="dmt-sector finance">Finance</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="LNLOT" width="80" height="28"></canvas></td>
+            <td><button class="btn-predict" onclick="event.stopPropagation();openBuyModal('pswsr-brewery','yes')">Predict</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="hero-stat-tile up">
-      <div class="hero-stat-label">Top Gainer</div>
-      <div class="hero-stat-value">DKARM</div>
-      <div class="hero-stat-sub">+3.90% · $34.15</div>
-    </div>
-    <div class="hero-stat-tile down">
-      <div class="hero-stat-label">Top Loser</div>
-      <div class="hero-stat-value">AGTR</div>
-      <div class="hero-stat-sub">-2.80% · $6.33</div>
-    </div>
-  </div>
+
+  </main>
 </div>
-
-<!-- TRENDING NOW -->
-<div class="trending-strip">
-  <div class="section-header">
-    <div class="section-title"><span class="section-title-icon">↗</span> Trending now</div>
-    <a href="stocks.html" class="section-link">VIEW ALL →</a>
-  </div>
-  <div class="trending-cards">
-    <a href="stock-detail.html?sym=DKARM" class="trending-card">
-      <canvas class="trending-card-chart sparkline-canvas" data-sym="DKARM" width="80" height="32"></canvas>
-      <div class="trending-card-info">
-        <div class="trending-card-sym">DKARM</div>
-        <div class="trending-card-change up">+3.90%</div>
-        <div class="trending-card-price">$34.15</div>
-      </div>
-      <div class="trending-card-arrow">→</div>
-    </a>
-    <a href="stock-detail.html?sym=AGTR" class="trending-card">
-      <canvas class="trending-card-chart sparkline-canvas" data-sym="AGTR" width="80" height="32"></canvas>
-      <div class="trending-card-info">
-        <div class="trending-card-sym">AGTR</div>
-        <div class="trending-card-change down">-2.80%</div>
-        <div class="trending-card-price">$6.33</div>
-      </div>
-      <div class="trending-card-arrow">→</div>
-    </a>
-    <a href="stock-detail.html?sym=LURE" class="trending-card">
-      <canvas class="trending-card-chart sparkline-canvas" data-sym="LURE" width="80" height="32"></canvas>
-      <div class="trending-card-info">
-        <div class="trending-card-sym">LURE</div>
-        <div class="trending-card-change up">+1.20%</div>
-        <div class="trending-card-price">$9.77</div>
-      </div>
-      <div class="trending-card-arrow">→</div>
-    </a>
-    <a href="stock-detail.html?sym=MGNOT" class="trending-card">
-      <canvas class="trending-card-chart sparkline-canvas" data-sym="MGNOT" width="80" height="32"></canvas>
-      <div class="trending-card-info">
-        <div class="trending-card-sym">MGNOT</div>
-        <div class="trending-card-change up">+0.40%</div>
-        <div class="trending-card-price">$18.90</div>
-      </div>
-      <div class="trending-card-arrow">→</div>
-    </a>
-  </div>
-</div>
-
-<!-- MAIN DASH GRID -->
-<div class="dash-grid">
-  <div class="dash-main">
-
-    <!-- FEATURED MARKETS -->
-    <div class="featured-markets">
-      <div class="featured-markets-header">
-        <div class="featured-markets-title">Featured markets</div>
-        <a href="stocks.html" class="section-link">ALL →</a>
-      </div>
-      <div class="sector-pills">
-        <button class="sector-pill active" onclick="filterFeatured('ALL',this)">ALL</button>
-        <button class="sector-pill" onclick="filterFeatured('Leisure',this)">LEISURE</button>
-        <button class="sector-pill" onclick="filterFeatured('Finance',this)">FINANCIAL</button>
-        <button class="sector-pill" onclick="filterFeatured('Defense',this)">DEFENSE</button>
-        <button class="sector-pill" onclick="filterFeatured('Energy',this)">INDUSTRIALS</button>
-        <button class="sector-pill" onclick="filterFeatured('Media',this)">MEDIA</button>
-      </div>
-      <div id="featured-rows">
-        <div class="featured-market-row" data-sector="Leisure">
-          <a href="stock-detail.html?sym=PSWSR" class="featured-market-cell">
-            <div class="fmc-sym">PSWSR</div><div class="fmc-name">Pisswasser Brewing Co.</div>
-            <div class="fmc-sector">Beverages</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="PSWSR" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$4.82</span><span class="fmc-change up">+2.30%</span></div>
-            <div class="fmc-vol">VOL $4.2M &nbsp; MCAP $312M</div>
-          </a>
-          <a href="stock-detail.html?sym=LOGOS" class="featured-market-cell">
-            <div class="fmc-sym">LOGOS</div><div class="fmc-name">Logos Entertainment</div>
-            <div class="fmc-sector">Media</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="LOGOS" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$11.20</span><span class="fmc-change down">-1.10%</span></div>
-            <div class="fmc-vol">VOL $1.8M &nbsp; MCAP $890M</div>
-          </a>
-          <a href="stock-detail.html?sym=SNFB" class="featured-market-cell">
-            <div class="fmc-sym">SNFB</div><div class="fmc-name">Sinfrontera National Bank</div>
-            <div class="fmc-sector">Financial</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="SNFB" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$88.40</span><span class="fmc-change up">+0.70%</span></div>
-            <div class="fmc-vol">VOL $3.1M &nbsp; MCAP $4.1B</div>
-          </a>
-        </div>
-        <div class="featured-market-row" data-sector="Defense">
-          <a href="stock-detail.html?sym=DKARM" class="featured-market-cell">
-            <div class="fmc-sym">DKARM</div><div class="fmc-name">Duke Arms Industries</div>
-            <div class="fmc-sector">Defense</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="DKARM" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$34.15</span><span class="fmc-change up">+3.90%</span></div>
-            <div class="fmc-vol">VOL $920K &nbsp; MCAP $1.8B</div>
-          </a>
-          <a href="stock-detail.html?sym=ALCRYS" class="featured-market-cell">
-            <div class="fmc-sym">ALCRYS</div><div class="fmc-name">Allied Crystal Sugar Co.</div>
-            <div class="fmc-sector">Industrials</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="ALCRYS" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$22.60</span><span class="fmc-change down">-0.50%</span></div>
-            <div class="fmc-vol">VOL $2.4M &nbsp; MCAP $2.2B</div>
-          </a>
-          <a href="stock-detail.html?sym=LURE" class="featured-market-cell">
-            <div class="fmc-sym">LURE</div><div class="fmc-name">Lure &amp; Reel Outdoors</div>
-            <div class="fmc-sector">Leisure</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="LURE" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$9.77</span><span class="fmc-change up">+1.20%</span></div>
-            <div class="fmc-vol">VOL $540K &nbsp; MCAP $480M</div>
-          </a>
-        </div>
-        <div class="featured-market-row" data-sector="Leisure">
-          <a href="stock-detail.html?sym=AGTR" class="featured-market-cell">
-            <div class="fmc-sym">AGTR</div><div class="fmc-name">Airgator Marine</div>
-            <div class="fmc-sector">Marine</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="AGTR" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$6.33</span><span class="fmc-change down">-2.80%</span></div>
-            <div class="fmc-vol">VOL $670K &nbsp; MCAP $210M</div>
-          </a>
-          <a href="stock-detail.html?sym=MGNOT" class="featured-market-cell">
-            <div class="fmc-sym">MGNOT</div><div class="fmc-name">Mega Noticias Network</div>
-            <div class="fmc-sector">Media</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="MGNOT" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$18.90</span><span class="fmc-change up">+0.40%</span></div>
-            <div class="fmc-vol">VOL $180K &nbsp; MCAP $640M</div>
-          </a>
-          <a href="stock-detail.html?sym=VCPROP" class="featured-market-cell">
-            <div class="fmc-sym">VCPROP</div><div class="fmc-name">Vice City Properties</div>
-            <div class="fmc-sector">Financial</div>
-            <div class="fmc-chart"><canvas class="sparkline-canvas" data-sym="VCPROP" width="200" height="36"></canvas></div>
-            <div class="fmc-bottom"><span class="fmc-price">$142.00</span><span class="fmc-change down">-0.90%</span></div>
-            <div class="fmc-vol">VOL $1.1M &nbsp; MCAP $6.8B</div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PREDICTION MARKETS -->
-    <div class="section-header" style="margin-top:28px">
-      <div class="section-title"><span class="section-title-icon">◈</span> Prediction Markets</div>
-      <a href="market.html?id=pswsr-6" class="section-link">ALL MARKETS →</a>
-    </div>
-    <div class="market-grid">
-      <div class="market-card featured" data-market-id="pswsr-6">
-        <div class="card-badge">🔥 HOT</div>
-        <div class="card-header">
-          <div class="card-icon-wrap pisswasser">🍺</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Will Pisswasser stock hit $6.00 before the Madrazzo assassination?</h3>
-            <div class="card-meta"><span class="card-tag">Stocks</span><span class="card-tag">Assassination Play</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">72%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:72%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">28%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=pswsr-6" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">72%</span></a>
-          <a href="market.html?id=pswsr-6" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">28%</span></a>
-        </div>
-        <div class="card-footer-stats"><span class="card-vol">$4.2M Vol.</span><span class="card-traders">1,840 traders</span><span class="card-countdown card-ends">⏱ 46h</span></div>
-      </div>
-      <div class="market-card" data-market-id="snfb-heist">
-        <div class="card-header">
-          <div class="card-icon-wrap snfb">🏦</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Sinfrontera Bank — successfully heisted this session?</h3>
-            <div class="card-meta"><span class="card-tag">Events</span><span class="card-tag">Heist</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">38%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:38%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">62%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=snfb-heist" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">38%</span></a>
-          <a href="market.html?id=snfb-heist" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">62%</span></a>
-        </div>
-        <div class="card-footer-stats"><span class="card-vol">$3.1M Vol.</span><span class="card-traders">2,100 traders</span><span class="card-countdown card-ends">⏱ 2h</span></div>
-      </div>
-      <div class="market-card" data-market-id="alcrys-accident">
-        <div class="card-header">
-          <div class="card-icon-wrap alcrys">🍬</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Allied Crystal — industrial accident before next patch?</h3>
-            <div class="card-meta"><span class="card-tag">Events</span><span class="card-tag">Risk Event</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">29%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:29%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">71%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=alcrys-accident" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">29%</span></a>
-          <a href="market.html?id=alcrys-accident" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">71%</span></a>
-        </div>
-        <div class="card-footer-stats"><span class="card-vol">$2.4M Vol.</span><span class="card-traders">1,240 traders</span><span class="card-countdown card-ends">⏱ 4d</span></div>
-      </div>
-      <div class="market-card" data-market-id="mgnot-leonidaman">
-        <div class="card-header">
-          <div class="card-icon-wrap mgnot">📺</div>
-          <div class="card-title-block">
-            <h3 class="card-title">Mega Noticias — "Leonida Man" segment airs this week?</h3>
-            <div class="card-meta"><span class="card-tag">Media</span><span class="card-tag">Media Event</span></div>
-          </div>
-        </div>
-        <div class="card-prob-row">
-          <div class="card-prob-yes"><span class="card-prob-label">Yes</span><span class="card-prob-pct" style="color:var(--teal)">91%</span></div>
-          <div class="card-prob-bar-wrap"><div class="card-prob-bar"><div class="card-prob-fill" style="width:91%"></div></div></div>
-          <div class="card-prob-no"><span class="card-prob-pct" style="color:var(--red)">9%</span><span class="card-prob-label">No</span></div>
-        </div>
-        <div class="card-outcomes">
-          <a href="market.html?id=mgnot-leonidaman" class="outcome-btn yes"><span class="outcome-label">Buy Yes</span><span class="outcome-pct">91%</span></a>
-          <a href="market.html?id=mgnot-leonidaman" class="outcome-btn no"><span class="outcome-label">Buy No</span><span class="outcome-pct">9%</span></a>
-        </div>
-        <div class="card-footer-stats"><span class="card-vol">$310K Vol.</span><span class="card-traders">180 traders</span><span class="card-countdown card-ends">⏱ 5d</span></div>
-      </div>
-    </div>
-    <div class="load-more-wrap"><a href="market.html?id=pswsr-6" class="btn-load-more">View All Prediction Markets →</a></div>
-  </div>
-
-  <!-- RIGHT SIDEBAR -->
-  <div class="dash-sidebar">
-    <!-- LEONIDA NEWS -->
-    <div class="news-widget">
-      <div class="news-widget-header"><span class="news-widget-title">Leonida News</span><span class="live-dot"></span></div>
-      <a href="news.html" class="news-widget-item">
-        <div class="nwi-meta"><span class="nwi-delta down">▼ -3.40%</span><span class="nwi-time">4M</span></div>
-        <div class="nwi-headline">Sinfrontera National Bank halts trading after vault breach in downtown Vice City</div>
-        <div class="nwi-tickers"><span class="nwi-ticker">SNFB</span><span class="nwi-ticker">DKARM</span></div>
-      </a>
-      <a href="news.html" class="news-widget-item">
-        <div class="nwi-meta"><span class="nwi-delta up">▲ +2.10%</span><span class="nwi-time">14M</span></div>
-        <div class="nwi-headline">Pisswasser unveils 'Vice Lite' SKU ahead of summer regatta season</div>
-        <div class="nwi-tickers"><span class="nwi-ticker">PSWSR</span></div>
-      </a>
-      <a href="news.html" class="news-widget-item">
-        <div class="nwi-meta"><span class="nwi-delta down">▼ -5.70%</span><span class="nwi-time">27M</span></div>
-        <div class="nwi-headline">Allied Crystal refinery strike enters fourth day; output cut by 60%</div>
-        <div class="nwi-tickers"><span class="nwi-ticker">ALCRYS</span></div>
-      </a>
-      <a href="news.html" class="news-widget-item">
-        <div class="nwi-meta"><span class="nwi-delta up">▲ +6.80%</span><span class="nwi-time">58M</span></div>
-        <div class="nwi-headline">Duke Arms wins three-year defense contract worth $1.2B</div>
-        <div class="nwi-tickers"><span class="nwi-ticker">DKARM</span><span class="nwi-ticker">LNLOT</span></div>
-      </a>
-      <a href="news.html" class="news-widget-item">
-        <div class="nwi-meta"><span class="nwi-delta up">▲ +4.20%</span><span class="nwi-time">92M</span></div>
-        <div class="nwi-headline">Logos Motor Group teases retro V8 supercar at Vice Auto Expo</div>
-        <div class="nwi-tickers"><span class="nwi-ticker">LOGOS</span></div>
-      </a>
-      <a href="news.html" class="news-widget-footer">ALL NEWS →</a>
-    </div>
-
-    <!-- ACTIVE HEISTS -->
-    <div class="widget">
-      <div class="widget-header"><span class="widget-title">Active Heists</span><span class="live-dot"></span></div>
-      <div class="movers-list">
-        <a href="heists.html" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11.5px;white-space:normal;line-height:1.3">Sinfrontera Vault Job</span><span class="badge badge-red" style="font-size:9px">HARD</span></a>
-        <a href="heists.html" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11.5px;white-space:normal;line-height:1.3">Ambrosia Refinery Sabotage</span><span class="badge badge-gold" style="font-size:9px">MED</span></a>
-        <a href="heists.html" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11.5px;white-space:normal;line-height:1.3">Duke Arms Container Hijack</span><span class="badge badge-green" style="font-size:9px">EASY</span></a>
-      </div>
-      <a href="heists.html" class="widget-footer-link">ALL HEISTS →</a>
-    </div>
-
-    <!-- TOP MOVERS -->
-    <div class="widget">
-      <div class="widget-header"><span class="widget-title">Top Movers</span></div>
-      <div class="movers-list">
-        <a href="stock-detail.html?sym=DKARM" class="mover-row" data-sym="DKARM"><span class="mover-name">DKARM</span><span class="mover-price">$34.15</span><span class="mover-delta up">▲ 3.9%</span></a>
-        <a href="stock-detail.html?sym=PSWSR" class="mover-row" data-sym="PSWSR"><span class="mover-name">PSWSR</span><span class="mover-price">$4.82</span><span class="mover-delta up">▲ 2.3%</span></a>
-        <a href="stock-detail.html?sym=AGTR" class="mover-row" data-sym="AGTR"><span class="mover-name">AGTR</span><span class="mover-price">$6.33</span><span class="mover-delta down">▼ 2.8%</span></a>
-        <a href="stock-detail.html?sym=LOGOS" class="mover-row" data-sym="LOGOS"><span class="mover-name">LOGOS</span><span class="mover-price">$11.20</span><span class="mover-delta down">▼ 1.1%</span></a>
-        <a href="stock-detail.html?sym=LURE" class="mover-row" data-sym="LURE"><span class="mover-name">LURE</span><span class="mover-price">$9.77</span><span class="mover-delta up">▲ 1.2%</span></a>
-      </div>
-      <a href="stocks.html" class="widget-footer-link">FULL TABLE →</a>
-    </div>
-
-    <!-- QUICK ROI -->
-    <div class="widget">
-      <div class="widget-header"><span class="widget-title">Quick ROI Calc</span></div>
-      <div class="calc-body">
-        <label class="calc-label">Business Type</label>
-        <select class="calc-select" id="biz-type"><option>Nightclub</option><option>Bunker</option><option>Coke Lab</option><option>Counterfeit Cash</option><option>Weed Farm</option></select>
-        <label class="calc-label">Investment ($)</label>
-        <input type="number" class="calc-input" id="invest-amt" value="1750000"/>
-        <button class="btn-calc" onclick="calcROI()">Calculate ROI</button>
-        <div class="calc-result"><span class="result-label">Est. Weekly Return</span><span class="result-value" id="result-val">—</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-</div></div>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" style="margin-left:220px">
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="index.html" class="logo"><div class="logo-mark">◈</div><div class="logo-text-wrap"><div class="logo-name">LEONIDAVICE</div><div class="logo-sub">Terminal · V2.0</div></div></a>
@@ -406,15 +441,12 @@
     </div>
     <div class="footer-links">
       <div class="footer-col"><p class="footer-col-title">Terminal</p><a href="stocks.html">Markets</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="heists.html">Heists</a></div>
-      <div class="footer-col"><p class="footer-col-title">Read</p><a href="news.html">Leonida News</a><a href="leaderboard.html">Leaderboard</a><a href="about.html">About</a></div>
+      <div class="footer-col"><p class="footer-col-title">Read</p><a href="news.html">The Wire</a><a href="leaderboard.html">Leaderboard</a><a href="about.html">About</a></div>
       <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="premium.html">Premium</a></div>
-      <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale County</a><a href="region.html?r=ambrosia">Ambrosia County</a><a href="region.html?r=kelly">Kelly County</a><a href="region.html?r=mariana">Mariana County</a></div>
+      <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale</a><a href="region.html?r=ambrosia">Ambrosia</a><a href="region.html?r=kelly">Kelly</a><a href="region.html?r=mariana">Mariana</a></div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 LeonidaVice Terminal · A fan-made economic simulator · Not affiliated with Rockstar Games or Take-Two Interactive · Leonida Credits (Ṁ) have no real-world monetary value</span>
-    <span class="footer-status"><span class="footer-status-dot"></span>ALL SYSTEMS NOMINAL</span>
-  </div>
+  <div class="footer-bottom"><span>© 2026 LeonidaVice.com — Fan site · Not affiliated with Rockstar Games or Take-Two Interactive · Leonida Credits (Ṁ) have no real-world monetary value</span><span class="footer-status"><span class="footer-status-dot"></span>ALL SYSTEMS NOMINAL</span></div>
 </footer>
 
 <button class="compact-toggle" onclick="document.body.classList.toggle('compact-mode')" title="Toggle compact mode">⊞</button>
@@ -424,43 +456,128 @@
 <script src="lmsr.js"></script>
 <script src="game-loop.js"></script>
 <script>
-function filterFeatured(sector, btn) {
-  document.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
+// Set username in topbar
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('tb-username');
+  if (el && typeof LV_LMSR !== 'undefined') el.textContent = LV_LMSR.getUsername();
+});
+
+// Filter dashboard markets table
+function filterDashMarkets(sector, btn) {
+  document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.featured-market-row').forEach(row => {
+  document.querySelectorAll('#dash-mkt-table tbody tr').forEach(row => {
     row.style.display = (sector === 'ALL' || row.dataset.sector === sector) ? '' : 'none';
   });
 }
-// Hero background chart
+
+// Chart timeframe tabs
+document.querySelectorAll('.chart-tf').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.chart-tf').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Main index chart
 document.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.getElementById('hero-bg-chart');
+  const canvas = document.getElementById('main-index-chart');
   if (!canvas) return;
-  canvas.width = canvas.offsetWidth || 600;
-  canvas.height = canvas.offsetHeight || 260;
+  canvas.width = canvas.offsetWidth || 800;
   const ctx = canvas.getContext('2d');
   const w = canvas.width, h = canvas.height;
   const pts = [];
-  let v = 0.4;
-  for (let i = 0; i < 120; i++) { v += (Math.random()-0.47)*0.03; v=Math.max(0.1,Math.min(0.9,v)); pts.push(v); }
-  const min = Math.min(...pts), max = Math.max(...pts), range = max-min||1;
+  let v = 0.35;
+  for (let i = 0; i < 200; i++) {
+    v += (Math.random() - 0.47) * 0.025;
+    v = Math.max(0.1, Math.min(0.9, v));
+    pts.push(v);
+  }
+  const min = Math.min(...pts) * 0.99;
+  const max = Math.max(...pts) * 1.01;
+  const range = max - min || 1;
+
+  // Grid lines
+  ctx.strokeStyle = 'rgba(31,31,53,0.6)';
+  ctx.lineWidth = 1;
+  for (let i = 1; i < 5; i++) {
+    const y = (i / 5) * h;
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+  }
+
+  // Fill
   ctx.beginPath();
-  pts.forEach((p,i) => {
-    const x = (i/(pts.length-1))*w;
-    const y = h - ((p-min)/range)*(h*0.7) - h*0.1;
-    i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+  pts.forEach((p, i) => {
+    const x = (i / (pts.length - 1)) * w;
+    const y = h - ((p - min) / range) * (h - 8) - 4;
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
   });
-  ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
-  const g = ctx.createLinearGradient(0,0,0,h);
-  g.addColorStop(0,'rgba(0,212,170,0.25)'); g.addColorStop(1,'rgba(0,212,170,0)');
+  ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
+  const g = ctx.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, 'rgba(0,212,170,0.12)');
+  g.addColorStop(1, 'rgba(0,212,170,0)');
   ctx.fillStyle = g; ctx.fill();
+
+  // Line
   ctx.beginPath();
-  pts.forEach((p,i) => {
-    const x = (i/(pts.length-1))*w;
-    const y = h - ((p-min)/range)*(h*0.7) - h*0.1;
-    i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+  pts.forEach((p, i) => {
+    const x = (i / (pts.length - 1)) * w;
+    const y = h - ((p - min) / range) * (h - 8) - 4;
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
   });
-  ctx.strokeStyle = 'rgba(0,212,170,0.6)'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.strokeStyle = 'rgba(0,212,170,0.7)';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // Live update — redraw with new point
+  setInterval(() => {
+    v += (Math.random() - 0.47) * 0.025;
+    v = Math.max(0.1, Math.min(0.9, v));
+    pts.push(v);
+    if (pts.length > 200) pts.shift();
+    // Quick redraw
+    ctx.clearRect(0, 0, w, h);
+    const mn = Math.min(...pts) * 0.99;
+    const mx = Math.max(...pts) * 1.01;
+    const rng = mx - mn || 1;
+    ctx.strokeStyle = 'rgba(31,31,53,0.6)'; ctx.lineWidth = 1;
+    for (let i = 1; i < 5; i++) { const y = (i/5)*h; ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+    ctx.beginPath();
+    pts.forEach((p,i) => { const x=(i/(pts.length-1))*w; const y=h-((p-mn)/rng)*(h-8)-4; i===0?ctx.moveTo(x,y):ctx.lineTo(x,y); });
+    ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
+    const gr = ctx.createLinearGradient(0,0,0,h);
+    gr.addColorStop(0,'rgba(0,212,170,0.12)'); gr.addColorStop(1,'rgba(0,212,170,0)');
+    ctx.fillStyle=gr; ctx.fill();
+    ctx.beginPath();
+    pts.forEach((p,i) => { const x=(i/(pts.length-1))*w; const y=h-((p-mn)/rng)*(h-8)-4; i===0?ctx.moveTo(x,y):ctx.lineTo(x,y); });
+    ctx.strokeStyle='rgba(0,212,170,0.7)'; ctx.lineWidth=1.5; ctx.stroke();
+  }, 2500);
 });
+
+// Live watchlist updates
+function updateWatchlist() {
+  if (typeof stockState === 'undefined') return;
+  ['PSWSR','DKARM','SNFB','AGTR','ALCRYS'].forEach(sym => {
+    const st = stockState[sym];
+    if (!st) return;
+    const priceEl = document.querySelector('[data-wl-price="' + sym + '"]');
+    const changeEl = document.querySelector('[data-wl-change="' + sym + '"]');
+    const up = st.change24h >= 0;
+    if (priceEl) priceEl.textContent = '$' + st.price.toFixed(2);
+    if (changeEl) {
+      changeEl.textContent = (up ? '▲' : '▼') + Math.abs(st.change24h).toFixed(1) + '%';
+      changeEl.className = 'sidebar-wl-change ' + (up ? 'up' : 'down');
+    }
+    // Also update table
+    const tPrice = document.querySelector('[data-sym-price="' + sym + '"]');
+    const tChange = document.querySelector('[data-sym-change="' + sym + '"]');
+    if (tPrice) tPrice.textContent = '$' + st.price.toFixed(2);
+    if (tChange) {
+      tChange.textContent = (up ? '▲ ' : '▼ ') + Math.abs(st.change24h).toFixed(2) + '%';
+      tChange.className = up ? 'dmt-up' : 'dmt-down';
+    }
+  });
+}
+setInterval(updateWatchlist, 2500);
 </script>
 </body></html>
-
