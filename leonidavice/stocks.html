@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Stocks — LeonidaVice</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-track">
+  <span class="tick up"><span class="tick-sym">PSWSR</span> <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span>
+  <span class="tick down"><span class="tick-sym">LOGOS</span> <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span>
+  <span class="tick up"><span class="tick-sym">SNFB</span> <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span>
+  <span class="tick up"><span class="tick-sym">DKARM</span> <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span>
+  <span class="tick down"><span class="tick-sym">ALCRYS</span> <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span>
+  <span class="tick up"><span class="tick-sym">LURE</span> <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span>
+  <span class="tick down"><span class="tick-sym">AGTR</span> <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span>
+  <span class="tick up"><span class="tick-sym">LNLOT</span> <span class="tick-val">$1.05</span> <span class="tick-delta">▲0.10%</span></span>
+  <span class="tick up"><span class="tick-sym">MGNOT</span> <span class="tick-val">$18.90</span> <span class="tick-delta">▲0.40%</span></span>
+  <span class="tick down"><span class="tick-sym">VCPROP</span> <span class="tick-val">$142.00</span> <span class="tick-delta">▼0.90%</span></span>
+  <span class="tick up"><span class="tick-sym">PSWSR</span> <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span>
+  <span class="tick down"><span class="tick-sym">LOGOS</span> <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span>
+  <span class="tick up"><span class="tick-sym">SNFB</span> <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span>
+  <span class="tick up"><span class="tick-sym">DKARM</span> <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span>
+  <span class="tick down"><span class="tick-sym">ALCRYS</span> <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span>
+  <span class="tick up"><span class="tick-sym">LURE</span> <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span>
+  <span class="tick down"><span class="tick-sym">AGTR</span> <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span>
+  <span class="tick up"><span class="tick-sym">LNLOT</span> <span class="tick-val">$1.05</span> <span class="tick-delta">▲0.10%</span></span>
+  <span class="tick up"><span class="tick-sym">MGNOT</span> <span class="tick-val">$18.90</span> <span class="tick-delta">▲0.40%</span></span>
+  <span class="tick down"><span class="tick-sym">VCPROP</span> <span class="tick-val">$142.00</span> <span class="tick-delta">▼0.90%</span></span>
+</div></div>
+
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Markets</a>
+    <a href="stocks.html" class="nav-link active">Stocks</a>
+    <a href="properties.html" class="nav-link">Properties</a>
+    <a href="businesses.html" class="nav-link">Businesses</a>
+    <a href="news.html" class="nav-link">News Feed</a>
+    <a href="heists.html" class="nav-link">Heists</a>
+    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+  </div>
+  <div class="nav-right">
+    <a href="portfolio.html" class="btn-ghost">Portfolio</a>
+    <a href="premium.html" class="btn-primary">Go Premium</a>
+  </div>
+</div></nav>
+
+<div class="stats-bar"><div class="stats-bar-inner">
+  <div class="stat-item"><span class="stat-label">Market Cap</span><span class="stat-value">$16.3B</span><span class="stat-delta up">▲ 1.4%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Top Gainer</span><span class="stat-value">DKARM</span><span class="stat-delta up">▲ 3.9%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Top Loser</span><span class="stat-value">AGTR</span><span class="stat-delta down">▼ 2.8%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Most Active</span><span class="stat-value">SNFB</span><span class="stat-delta up">$3.1M Vol.</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Live Traders</span><span class="stat-value" data-traders>3,841</span><span class="stat-delta up">▲ 12%</span></div>
+</div></div>
+
+<div class="main-layout">
+  <aside class="sidebar-left">
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Categories</p>
+      <a href="index.html" class="sidebar-link"><span class="sidebar-icon">◈</span> All Markets</a>
+      <a href="stocks.html" class="sidebar-link active"><span class="sidebar-icon">📈</span> Stocks</a>
+      <a href="properties.html" class="sidebar-link"><span class="sidebar-icon">🏢</span> Properties</a>
+      <a href="businesses.html" class="sidebar-link"><span class="sidebar-icon">💼</span> Businesses</a>
+      <a href="heists.html" class="sidebar-link"><span class="sidebar-icon">🎯</span> Heists</a>
+      <a href="news.html" class="sidebar-link"><span class="sidebar-icon">📡</span> Leonida News</a>
+    </div>
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Sectors</p>
+      <a href="#" class="sidebar-link" onclick="filterSector('All',event)">All Sectors</a>
+      <a href="#" class="sidebar-link" onclick="filterSector('Finance',event)">Finance</a>
+      <a href="#" class="sidebar-link" onclick="filterSector('Defense',event)">Defense</a>
+      <a href="#" class="sidebar-link" onclick="filterSector('Leisure',event)">Leisure</a>
+      <a href="#" class="sidebar-link" onclick="filterSector('Media',event)">Media</a>
+      <a href="#" class="sidebar-link" onclick="filterSector('Energy',event)">Energy</a>
+    </div>
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Tools</p>
+      <a href="calculator.html" class="sidebar-link">ROI Calculator</a>
+      <a href="portfolio.html" class="sidebar-link">My Portfolio</a>
+      <a href="premium.html" class="sidebar-link premium-link">⚡ Premium</a>
+    </div>
+  </aside>
+
+  <section class="feed">
+    <div class="page-header">
+      <h1>Leonida Stock Exchange</h1>
+      <p>Live simulated prices — advanced GBM + momentum + news event engine, ticking every 2.5s</p>
+    </div>
+    <div class="stats-strip">
+      <div class="stat-card"><div class="stat-card-label">Total Market Cap</div><div class="stat-card-value">$16.3B</div><div class="stat-card-delta up">▲ 1.4% today</div></div>
+      <div class="stat-card"><div class="stat-card-label">Top Gainer</div><div class="stat-card-value">DKARM</div><div class="stat-card-delta up">▲ 3.9%</div></div>
+      <div class="stat-card"><div class="stat-card-label">Top Loser</div><div class="stat-card-value">AGTR</div><div class="stat-card-delta down">▼ 2.8%</div></div>
+      <div class="stat-card"><div class="stat-card-label">Most Active</div><div class="stat-card-value">SNFB</div><div class="stat-card-delta up">$3.1M Vol.</div></div>
+    </div>
+    <div class="filter-bar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterSector('All',event)">All</button>
+        <button class="filter-tab" onclick="filterSector('Energy',event)">Energy</button>
+        <button class="filter-tab" onclick="filterSector('Finance',event)">Finance</button>
+        <button class="filter-tab" onclick="filterSector('Defense',event)">Defense</button>
+        <button class="filter-tab" onclick="filterSector('Leisure',event)">Leisure</button>
+        <button class="filter-tab" onclick="filterSector('Media',event)">Media</button>
+      </div>
+      <input type="text" placeholder="Search stocks…" class="search-input" id="stock-search"/>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table" id="stocks-table">
+        <colgroup>
+          <col class="col-ticker"/>
+          <col class="col-company"/>
+          <col class="col-price"/>
+          <col class="col-24h"/>
+          <col class="col-7d"/>
+          <col class="col-cap"/>
+          <col class="col-vol"/>
+          <col class="col-sector"/>
+          <col class="col-chart"/>
+          <col class="col-action"/>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Ticker</th><th>Company</th><th>Price</th><th>24h</th><th>7d</th>
+            <th>Mkt Cap</th><th>Volume</th><th>Sector</th><th>Chart</th><th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-sector="Leisure" data-sym="PSWSR">
+            <td class="td-ticker">PSWSR</td>
+            <td class="td-company">Pisswasser Brewing</td>
+            <td class="td-price">$4.82</td>
+            <td class="td-up td-change24">▲ 2.3%</td>
+            <td class="td-up">▲ 8.1%</td>
+            <td class="td-cap">$312M</td><td class="td-cap">$4.2M</td>
+            <td><span class="badge badge-cyan">Leisure</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="PSWSR" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=PSWSR" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Media" data-sym="LOGOS">
+            <td class="td-ticker">LOGOS</td>
+            <td class="td-company">Logos Entertainment</td>
+            <td class="td-price">$11.20</td>
+            <td class="td-down td-change24">▼ 1.1%</td>
+            <td class="td-down">▼ 3.2%</td>
+            <td class="td-cap">$890M</td><td class="td-cap">$1.8M</td>
+            <td><span class="badge badge-purple">Media</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="LOGOS" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=LOGOS" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Finance" data-sym="SNFB">
+            <td class="td-ticker">SNFB</td>
+            <td class="td-company">Sinfrontera National Bank</td>
+            <td class="td-price">$88.40</td>
+            <td class="td-up td-change24">▲ 0.7%</td>
+            <td class="td-up">▲ 2.4%</td>
+            <td class="td-cap">$4.1B</td><td class="td-cap">$3.1M</td>
+            <td><span class="badge badge-green">Finance</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="SNFB" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=SNFB" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Defense" data-sym="DKARM">
+            <td class="td-ticker">DKARM</td>
+            <td class="td-company">Duke Arms</td>
+            <td class="td-price">$34.15</td>
+            <td class="td-up td-change24">▲ 3.9%</td>
+            <td class="td-up">▲ 11.2%</td>
+            <td class="td-cap">$1.8B</td><td class="td-cap">$920K</td>
+            <td><span class="badge badge-pink">Defense</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="DKARM" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=DKARM" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Energy" data-sym="ALCRYS">
+            <td class="td-ticker">ALCRYS</td>
+            <td class="td-company">Allied Crystal Sugar</td>
+            <td class="td-price">$22.60</td>
+            <td class="td-down td-change24">▼ 0.5%</td>
+            <td class="td-down">▼ 1.8%</td>
+            <td class="td-cap">$2.2B</td><td class="td-cap">$2.4M</td>
+            <td><span class="badge badge-gold">Energy</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="ALCRYS" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=ALCRYS" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Leisure" data-sym="LURE">
+            <td class="td-ticker">LURE</td>
+            <td class="td-company">Lure & Reel Co.</td>
+            <td class="td-price">$9.77</td>
+            <td class="td-up td-change24">▲ 1.2%</td>
+            <td class="td-up">▲ 4.5%</td>
+            <td class="td-cap">$480M</td><td class="td-cap">$540K</td>
+            <td><span class="badge badge-cyan">Leisure</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="LURE" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=LURE" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Leisure" data-sym="AGTR">
+            <td class="td-ticker">AGTR</td>
+            <td class="td-company">Airgator Marine</td>
+            <td class="td-price">$6.33</td>
+            <td class="td-down td-change24">▼ 2.8%</td>
+            <td class="td-down">▼ 6.1%</td>
+            <td class="td-cap">$210M</td><td class="td-cap">$670K</td>
+            <td><span class="badge badge-cyan">Leisure</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="AGTR" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=AGTR" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Finance" data-sym="LNLOT">
+            <td class="td-ticker">LNLOT</td>
+            <td class="td-company">Leonida Lottery Corp.</td>
+            <td class="td-price">$1.05</td>
+            <td class="td-up td-change24">▲ 0.1%</td>
+            <td class="td-up">▲ 0.3%</td>
+            <td class="td-cap">$88M</td><td class="td-cap">$310K</td>
+            <td><span class="badge badge-green">Finance</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="LNLOT" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=LNLOT" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Media" data-sym="MGNOT">
+            <td class="td-ticker">MGNOT</td>
+            <td class="td-company">Mega Noticias</td>
+            <td class="td-price">$18.90</td>
+            <td class="td-up td-change24">▲ 0.4%</td>
+            <td class="td-up">▲ 1.1%</td>
+            <td class="td-cap">$640M</td><td class="td-cap">$180K</td>
+            <td><span class="badge badge-pink">Media</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="MGNOT" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=MGNOT" class="btn-trade">Trade</a></td>
+          </tr>
+          <tr data-sector="Finance" data-sym="VCPROP">
+            <td class="td-ticker">VCPROP</td>
+            <td class="td-company">Vice City Properties</td>
+            <td class="td-price">$142.00</td>
+            <td class="td-down td-change24">▼ 0.9%</td>
+            <td class="td-down">▼ 2.3%</td>
+            <td class="td-cap">$6.8B</td><td class="td-cap">$1.1M</td>
+            <td><span class="badge badge-green">Finance</span></td>
+            <td><canvas class="sparkline-canvas" data-sym="VCPROP" width="80" height="28"></canvas></td>
+            <td class="td-action"><a href="stock-detail.html?sym=VCPROP" class="btn-trade">Trade</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <aside class="sidebar-right">
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Top Movers</span></div>
+      <div class="movers-list">
+        <a href="stock-detail.html?sym=DKARM" class="mover-row" data-sym="DKARM"><span class="mover-name">DKARM</span><span class="mover-price">$34.15</span><span class="mover-delta up">▲ 3.9%</span></a>
+        <a href="stock-detail.html?sym=PSWSR" class="mover-row" data-sym="PSWSR"><span class="mover-name">PSWSR</span><span class="mover-price">$4.82</span><span class="mover-delta up">▲ 2.3%</span></a>
+        <a href="stock-detail.html?sym=AGTR" class="mover-row" data-sym="AGTR"><span class="mover-name">AGTR</span><span class="mover-price">$6.33</span><span class="mover-delta down">▼ 2.8%</span></a>
+        <a href="stock-detail.html?sym=LOGOS" class="mover-row" data-sym="LOGOS"><span class="mover-name">LOGOS</span><span class="mover-price">$11.20</span><span class="mover-delta down">▼ 1.1%</span></a>
+        <a href="stock-detail.html?sym=LURE" class="mover-row" data-sym="LURE"><span class="mover-name">LURE</span><span class="mover-price">$9.77</span><span class="mover-delta up">▲ 1.2%</span></a>
+      </div>
+      <a href="stocks.html" class="widget-footer-link">Full stock table →</a>
+    </div>
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Leonida Market News</span><span class="live-dot"></span></div>
+      <div class="news-feed">
+        <a href="news.html" class="news-item"><span class="news-item-hot">🔥 HOT</span><p class="news-text">Assassination window OPEN — PSWSR ▲2.3%</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">8m ago</span><p class="news-text">Duke Arms secures $420M police contract</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">15m ago</span><p class="news-text">Pisswasser expansion confirmed in Vice-Dale</p></a>
+      </div>
+      <a href="news.html" class="widget-footer-link">View full news feed →</a>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a><p class="footer-tagline">The Leonida Market Terminal — Bloomberg for criminals.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><p class="footer-col-title">Markets</p><a href="stocks.html">Stocks</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="heists.html">Heists</a></div>
+      <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="leaderboard.html">Leaderboard</a><a href="premium.html">Premium</a></div>
+      <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale County</a><a href="region.html?r=ambrosia">Ambrosia County</a><a href="region.html?r=kelly">Kelly County</a><a href="region.html?r=mariana">Mariana County</a></div>
+      <div class="footer-col"><p class="footer-col-title">About</p><a href="about.html">About</a><a href="about.html#disclaimer">Disclaimer</a><a href="about.html#legal">Legal</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 LeonidaVice.com — Fan site. Not affiliated with Rockstar Games or Take-Two Interactive.</p></div>
+</footer>
+<script src="data-config.js"></script>
+<script src="app.js"></script>
+<script>
+function filterSector(s, e) {
+  if(e) e.preventDefault();
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  if(e && e.target.classList.contains('filter-tab')) e.target.classList.add('active');
+  document.querySelectorAll('#stocks-table tbody tr').forEach(row => {
+    row.style.display = (s === 'All' || row.dataset.sector === s) ? '' : 'none';
+  });
+}
+document.getElementById('stock-search').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('#stocks-table tbody tr').forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+});
+</script>
+</body></html>
+

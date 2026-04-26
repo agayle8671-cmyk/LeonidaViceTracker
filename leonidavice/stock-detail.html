@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Stock Detail — LeonidaVice</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-track">
+  <span class="tick up"><span class="tick-sym">PSWSR</span> <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span>
+  <span class="tick down"><span class="tick-sym">LOGOS</span> <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span>
+  <span class="tick up"><span class="tick-sym">SNFB</span> <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span>
+  <span class="tick up"><span class="tick-sym">DKARM</span> <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span>
+  <span class="tick down"><span class="tick-sym">ALCRYS</span> <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span>
+  <span class="tick up"><span class="tick-sym">LURE</span> <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span>
+  <span class="tick down"><span class="tick-sym">AGTR</span> <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span>
+  <span class="tick up"><span class="tick-sym">LNLOT</span> <span class="tick-val">$1.05</span> <span class="tick-delta">▲0.10%</span></span>
+  <span class="tick up"><span class="tick-sym">MGNOT</span> <span class="tick-val">$18.90</span> <span class="tick-delta">▲0.40%</span></span>
+  <span class="tick down"><span class="tick-sym">VCPROP</span> <span class="tick-val">$142.00</span> <span class="tick-delta">▼0.90%</span></span>
+  <span class="tick up"><span class="tick-sym">PSWSR</span> <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span>
+  <span class="tick down"><span class="tick-sym">LOGOS</span> <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span>
+  <span class="tick up"><span class="tick-sym">SNFB</span> <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span>
+  <span class="tick up"><span class="tick-sym">DKARM</span> <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span>
+  <span class="tick down"><span class="tick-sym">ALCRYS</span> <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span>
+  <span class="tick up"><span class="tick-sym">LURE</span> <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span>
+  <span class="tick down"><span class="tick-sym">AGTR</span> <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span>
+  <span class="tick up"><span class="tick-sym">LNLOT</span> <span class="tick-val">$1.05</span> <span class="tick-delta">▲0.10%</span></span>
+  <span class="tick up"><span class="tick-sym">MGNOT</span> <span class="tick-val">$18.90</span> <span class="tick-delta">▲0.40%</span></span>
+  <span class="tick down"><span class="tick-sym">VCPROP</span> <span class="tick-val">$142.00</span> <span class="tick-delta">▼0.90%</span></span>
+</div></div>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Markets</a>
+    <a href="stocks.html" class="nav-link active">Stocks</a>
+    <a href="properties.html" class="nav-link">Properties</a>
+    <a href="businesses.html" class="nav-link">Businesses</a>
+    <a href="news.html" class="nav-link">News Feed</a>
+    <a href="heists.html" class="nav-link">Heists</a>
+    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+  </div>
+  <div class="nav-right"><a href="portfolio.html" class="btn-ghost">Portfolio</a><a href="premium.html" class="btn-primary">Go Premium</a></div>
+</div></nav>
+<div class="stats-bar"><div class="stats-bar-inner">
+  <div class="stat-item"><span class="stat-label">Market Cap</span><span class="stat-value">$16.3B</span><span class="stat-delta up">▲ 1.4%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Assassination Window</span><span class="stat-value live-pulse">OPEN</span><span class="stat-delta up">Bawsaq Active</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Live Traders</span><span class="stat-value" data-traders>3,841</span><span class="stat-delta up">▲ 12%</span></div>
+</div></div>
+
+<!-- hidden marker for JS to detect this page and which sym -->
+<span id="stock-detail-sym" data-sym="PSWSR" style="display:none"></span>
+
+<div class="stock-detail-layout">
+  <div>
+    <div class="breadcrumb">
+      <a href="index.html">Markets</a><span class="breadcrumb-sep">›</span>
+      <a href="stocks.html">Stocks</a><span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)" id="sd-sym">PSWSR</span>
+    </div>
+
+    <div class="stock-hero">
+      <div class="stock-hero-top">
+        <div class="stock-identity">
+          <div class="stock-icon" id="sd-icon" style="background:rgba(255,209,102,0.15)">��</div>
+          <div class="stock-ticker-name">
+            <h2 id="sd-sym2">PSWSR</h2>
+            <p id="sd-name">Pisswasser Brewing</p>
+            <span class="badge badge-cyan" id="sd-sector" style="margin-top:4px">Leisure</span>
+          </div>
+        </div>
+        <div class="stock-price-block">
+          <div class="stock-current-price" id="sd-price">$4.82</div>
+          <div class="stock-price-change up" id="sd-change">▲ 2.30%</div>
+        </div>
+      </div>
+
+      <div class="stock-stats-row">
+        <div class="stock-stat"><div class="stock-stat-label">Open</div><div class="stock-stat-value" id="sd-open">$4.72</div></div>
+        <div class="stock-stat"><div class="stock-stat-label">High</div><div class="stock-stat-value" id="sd-high">$4.91</div></div>
+        <div class="stock-stat"><div class="stock-stat-label">Low</div><div class="stock-stat-value" id="sd-low">$4.68</div></div>
+        <div class="stock-stat"><div class="stock-stat-label">Mkt Cap</div><div class="stock-stat-value" id="sd-cap">$312M</div></div>
+        <div class="stock-stat"><div class="stock-stat-label">Volume</div><div class="stock-stat-value" id="sd-vol">$4.2M</div></div>
+      </div>
+
+      <div class="assassination-alert">
+        <div class="assassination-alert-icon">🎯</div>
+        <div>
+          <div class="assassination-alert-title">Assassination Mission Tie-In</div>
+          <div class="assassination-alert-body" id="sd-assassination-info">
+            The Madrazzo assassination window is currently <strong style="color:var(--teal)">OPEN</strong>.
+            Historical data shows PSWSR gains 18–24% in the 48 hours following this event.
+            Accumulate before the window closes. Next expected window: ~72 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="market-detail-card">
+      <div class="chart-title">Price History — Live Feed</div>
+      <div class="chart-container" style="padding:8px">
+        <canvas id="stock-main-chart" width="700" height="200" style="width:100%;height:200px"></canvas>
+      </div>
+    </div>
+
+    <div class="market-detail-card">
+      <div class="chart-title" style="margin-bottom:14px">Company Intelligence</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="background:var(--surface-2);border-radius:9px;padding:14px">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);margin-bottom:8px">About</div>
+          <p style="font-size:12px;color:var(--text-2);line-height:1.6" id="sd-about">
+            Pisswasser Brewing is Leonida's dominant beer brand, with a brewery in Vice-Dale County. 
+            The company benefits from assassination mission events and has a strong correlation with 
+            nightlife sector performance in Vice City.
+          </p>
+        </div>
+        <div style="background:var(--surface-2);border-radius:9px;padding:14px">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);margin-bottom:8px">Trading Strategy</div>
+          <p style="font-size:12px;color:var(--text-2);line-height:1.6" id="sd-strategy">
+            Buy before assassination windows open. Sell within 48h of the event. 
+            Avoid holding during Allied Crystal labor disputes — cross-sector correlation 
+            causes sympathy dips. Beta: 1.4 (high volatility).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="market-detail-card">
+      <div class="chart-title" style="margin-bottom:14px">Recent Activity</div>
+      <div class="activity-item"><span class="activity-side buy">BUY</span><span class="activity-amount">12,400 shares @ $4.81</span><span class="activity-time">1m ago</span></div>
+      <div class="activity-item"><span class="activity-side buy">BUY</span><span class="activity-amount">8,200 shares @ $4.80</span><span class="activity-time">3m ago</span></div>
+      <div class="activity-item"><span class="activity-side sell">SELL</span><span class="activity-amount">3,100 shares @ $4.79</span><span class="activity-time">6m ago</span></div>
+      <div class="activity-item"><span class="activity-side buy">BUY</span><span class="activity-amount">21,000 shares @ $4.77</span><span class="activity-time">11m ago</span></div>
+      <div class="activity-item"><span class="activity-side sell">SELL</span><span class="activity-amount">5,800 shares @ $4.75</span><span class="activity-time">17m ago</span></div>
+    </div>
+  </div>
+
+  <aside class="sidebar-right" style="position:sticky;top:calc(var(--ticker-h) + var(--nav-h) + var(--stats-h) + 24px);height:fit-content">
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Related Markets</span></div>
+      <div class="movers-list">
+        <a href="market.html?id=pswsr-6" class="mover-row"><span class="mover-name" style="font-size:11px;font-family:inherit;white-space:normal;line-height:1.3">PSWSR hit $6 before assassination?</span><span class="mover-delta up">72%</span></a>
+        <a href="market.html?id=logos-week" class="mover-row"><span class="mover-name" style="font-size:11px;font-family:inherit;white-space:normal;line-height:1.3">LOGOS above $13 this week?</span><span class="mover-delta up">61%</span></a>
+        <a href="market.html?id=snfb-heist" class="mover-row"><span class="mover-name" style="font-size:11px;font-family:inherit;white-space:normal;line-height:1.3">SNFB heist target?</span><span class="mover-delta down">38%</span></a>
+      </div>
+      <a href="index.html" class="widget-footer-link">All markets →</a>
+    </div>
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">All Stocks</span></div>
+      <div class="movers-list">
+        <a href="stock-detail.html?sym=PSWSR" class="mover-row" data-sym="PSWSR"><span class="mover-name">PSWSR</span><span class="mover-price">$4.82</span><span class="mover-delta up">▲ 2.3%</span></a>
+        <a href="stock-detail.html?sym=LOGOS" class="mover-row" data-sym="LOGOS"><span class="mover-name">LOGOS</span><span class="mover-price">$11.20</span><span class="mover-delta down">▼ 1.1%</span></a>
+        <a href="stock-detail.html?sym=SNFB" class="mover-row" data-sym="SNFB"><span class="mover-name">SNFB</span><span class="mover-price">$88.40</span><span class="mover-delta up">▲ 0.7%</span></a>
+        <a href="stock-detail.html?sym=DKARM" class="mover-row" data-sym="DKARM"><span class="mover-name">DKARM</span><span class="mover-price">$34.15</span><span class="mover-delta up">▲ 3.9%</span></a>
+        <a href="stock-detail.html?sym=ALCRYS" class="mover-row" data-sym="ALCRYS"><span class="mover-name">ALCRYS</span><span class="mover-price">$22.60</span><span class="mover-delta down">▼ 0.5%</span></a>
+        <a href="stock-detail.html?sym=LURE" class="mover-row" data-sym="LURE"><span class="mover-name">LURE</span><span class="mover-price">$9.77</span><span class="mover-delta up">▲ 1.2%</span></a>
+        <a href="stock-detail.html?sym=AGTR" class="mover-row" data-sym="AGTR"><span class="mover-name">AGTR</span><span class="mover-price">$6.33</span><span class="mover-delta down">▼ 2.8%</span></a>
+        <a href="stock-detail.html?sym=VCPROP" class="mover-row" data-sym="VCPROP"><span class="mover-name">VCPROP</span><span class="mover-price">$142.00</span><span class="mover-delta down">▼ 0.9%</span></a>
+      </div>
+      <a href="stocks.html" class="widget-footer-link">Full table →</a>
+    </div>
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Leonida Market News</span><span class="live-dot"></span></div>
+      <div class="news-feed">
+        <a href="news.html" class="news-item"><span class="news-item-hot">🔥 HOT</span><p class="news-text">Assassination window OPEN — PSWSR ▲2.3%</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">8m ago</span><p class="news-text">Duke Arms secures $420M police contract</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">15m ago</span><p class="news-text">Pisswasser expansion confirmed in Vice-Dale</p></a>
+      </div>
+      <a href="news.html" class="widget-footer-link">View full news feed →</a>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a><p class="footer-tagline">The Leonida Market Terminal — Bloomberg for criminals.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><p class="footer-col-title">Markets</p><a href="stocks.html">Stocks</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="heists.html">Heists</a></div>
+      <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="leaderboard.html">Leaderboard</a><a href="premium.html">Premium</a></div>
+      <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale County</a><a href="region.html?r=ambrosia">Ambrosia County</a><a href="region.html?r=kelly">Kelly County</a><a href="region.html?r=mariana">Mariana County</a></div>
+      <div class="footer-col"><p class="footer-col-title">About</p><a href="about.html">About</a><a href="about.html#disclaimer">Disclaimer</a><a href="about.html#legal">Legal</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 LeonidaVice.com — Fan site. Not affiliated with Rockstar Games or Take-Two Interactive.</p></div>
+</footer>
+<script src="data-config.js"></script>
+<script src="app.js"></script>
+<script>
+// Update sd-sym2 to match sd-sym
+document.addEventListener('DOMContentLoaded', () => {
+  const sym = new URLSearchParams(window.location.search).get('sym') || 'PSWSR';
+  const el2 = document.getElementById('sd-sym2');
+  if(el2) el2.textContent = sym;
+  // Assassination info per stock
+  const info = {
+    PSWSR:  { about:'Pisswasser Brewing is Leonida\'s dominant beer brand, with a brewery in Vice-Dale County. Strong correlation with nightlife sector and assassination events.', strategy:'Buy before assassination windows open. Sell within 48h. Beta: 1.4 (high volatility). Avoid during Allied Crystal labor disputes.' },
+    LOGOS:  { about:'Logos Entertainment operates casinos and entertainment venues across Vice City. Revenue tied to tourism and nightlife foot traffic.', strategy:'Buy on positive tourism news. Sensitive to law enforcement crackdowns on Vice City nightlife. Beta: 1.1.' },
+    SNFB:   { about:'Sinfrontera National Bank is the primary financial institution in Leonida. Heist events cause short-term dips followed by insurance-driven recoveries.', strategy:'Short before confirmed heist windows. Buy the dip post-heist. Low beta (0.6) makes it a safe haven during market volatility.' },
+    DKARM:  { about:'Duke Arms is a defense contractor with deep roots in Leonida\'s law enforcement and military sectors. Benefits from crime wave events.', strategy:'Buy on assassination windows and crime wave events. Strong momentum stock. Beta: 1.3. Correlated with PSWSR during assassination plays.' },
+    ALCRYS: { about:'Allied Crystal Sugar operates the largest industrial refinery in Ambrosia County. Labor disputes and industrial accidents are key risk factors.', strategy:'Monitor Ambrosia County labor news. Sell before industrial accident events. Beta: 0.9. Defensive play during market downturns.' },
+    LURE:   { about:'Lure & Reel Co. dominates the nautical and leisure recreation sector in Mariana County and the Leonida Keys.', strategy:'Buy on positive tourism data for Mariana County. Correlated with Airgator (AGTR). Beta: 1.0. Seasonal patterns around Keys tourism.' },
+    AGTR:   { about:'Airgator Marine provides airboat tours and equipment in the Grassrivers region. Environmental rulings are the primary risk factor.', strategy:'High volatility play (Beta: 1.6). Buy on Grassrivers event announcements. Sell before environmental court rulings. Correlated with LURE.' },
+    LNLOT:  { about:'Leonida Lottery Corp. is a state-backed entity with stable, low-volatility revenue from ticket sales across Leonida.', strategy:'Safe haven asset. Low beta (0.4). Buy during market downturns as a defensive position. Dividend plays around jackpot announcements.' },
+    MGNOT:  { about:'Mega Noticias is the primary Spanish-language broadcaster in Leonida, famous for the viral "Leonida Man" segment.', strategy:'Buy on viral content announcements. Advertising revenue spikes drive short-term gains. Beta: 0.8. Stable media play.' },
+    VCPROP: { about:'Vice City Properties manages the premium real estate portfolio across Vice-Dale County, including Vice Beach penthouses.', strategy:'Long-term hold. Low beta (0.7). Buy on interest rate cuts from Sinfrontera Bank. Correlated with SNFB rate decisions.' }
+  };
+  const d = info[sym] || info['PSWSR'];
+  const setEl = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
+  setEl('sd-about', d.about);
+  setEl('sd-strategy', d.strategy);
+  // Update assassination alert per stock
+  const alerts = {
+    PSWSR: 'The Madrazzo assassination window is currently OPEN. Historical data shows PSWSR gains 18–24% in the 48 hours following this event. Accumulate before the window closes.',
+    DKARM: 'Duke Arms benefits from assassination events via increased security spending. Typically gains 8–12% in sympathy with PSWSR during active windows.',
+    SNFB:  'Sinfrontera Bank is a heist target. Monitor the Heists tracker for active windows. Post-heist dips of 3–5% are historically followed by full recovery within 72h.',
+    default: 'Monitor the Heists & Missions tracker for events that may impact this stock. Check the News Feed for real-time intelligence on upcoming story missions.'
+  };
+  const alertEl = document.getElementById('sd-assassination-info');
+  if(alertEl) alertEl.innerHTML = (alerts[sym] || alerts.default);
+});
+</script>
+</body></html>
+

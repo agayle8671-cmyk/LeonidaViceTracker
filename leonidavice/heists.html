@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Heists and Missions - LeonidaVice</title><link rel="stylesheet" href="styles.css"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/></head>
+<body>
+<div class="ticker-wrap"><div class="ticker-track">
+  <span class="tick up"><span class="tick-sym">PSWSR</span> <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span>
+  <span class="tick down"><span class="tick-sym">LOGOS</span> <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span>
+  <span class="tick up"><span class="tick-sym">SNFB</span> <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span>
+  <span class="tick up"><span class="tick-sym">DKARM</span> <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span>
+  <span class="tick down"><span class="tick-sym">ALCRYS</span> <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span>
+  <span class="tick up"><span class="tick-sym">PSWSR</span> <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span>
+  <span class="tick down"><span class="tick-sym">LOGOS</span> <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span>
+  <span class="tick up"><span class="tick-sym">SNFB</span> <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span>
+  <span class="tick up"><span class="tick-sym">DKARM</span> <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span>
+  <span class="tick down"><span class="tick-sym">ALCRYS</span> <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span>
+</div></div>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Markets</a>
+    <a href="stocks.html" class="nav-link">Stocks</a>
+    <a href="properties.html" class="nav-link">Properties</a>
+    <a href="businesses.html" class="nav-link">Businesses</a>
+    <a href="news.html" class="nav-link">News Feed</a>
+    <a href="heists.html" class="nav-link active">Heists</a>
+    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+  </div>
+  <div class="nav-right"><a href="portfolio.html" class="btn-ghost">Portfolio</a><a href="premium.html" class="btn-primary">Go Premium</a></div>
+</div></nav>
+<div class="stats-bar"><div class="stats-bar-inner">
+  <div class="stat-item"><span class="stat-label">Active Windows</span><span class="stat-value live-pulse">3</span><span class="stat-delta up">Open Now</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Assassination</span><span class="stat-value live-pulse">OPEN</span><span class="stat-delta up">Madrazzo</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Next Heist</span><span class="stat-value">SNFB</span><span class="stat-delta up">~2h window</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Live Traders</span><span class="stat-value" data-traders>3,841</span><span class="stat-delta up">▲ 12%</span></div>
+</div></div>
+<div class="main-layout">
+  <aside class="sidebar-left">
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Categories</p>
+      <a href="index.html" class="sidebar-link"><span class="sidebar-icon">◈</span> All Markets</a>
+      <a href="stocks.html" class="sidebar-link"><span class="sidebar-icon">📈</span> Stocks</a>
+      <a href="properties.html" class="sidebar-link"><span class="sidebar-icon">🏢</span> Properties</a>
+      <a href="businesses.html" class="sidebar-link"><span class="sidebar-icon">💼</span> Businesses</a>
+      <a href="heists.html" class="sidebar-link active"><span class="sidebar-icon">🎯</span> Heists</a>
+      <a href="news.html" class="sidebar-link"><span class="sidebar-icon">📡</span> Leonida News</a>
+    </div>
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Mission Types</p>
+      <a href="#assassinations" class="sidebar-link">Assassinations</a>
+      <a href="#bank-heists" class="sidebar-link">Bank Heists</a>
+      <a href="#missions" class="sidebar-link">Story Missions</a>
+      <a href="#online-events" class="sidebar-link">Online Events</a>
+    </div>
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Tools</p>
+      <a href="calculator.html" class="sidebar-link">ROI Calculator</a>
+      <a href="portfolio.html" class="sidebar-link">My Portfolio</a>
+      <a href="premium.html" class="sidebar-link premium-link">⚡ Premium</a>
+    </div>
+  </aside>
+
+  <section class="feed">
+    <div class="page-header">
+      <h1>Heists &amp; Missions Tracker</h1>
+      <p>Real-time intelligence on assassination windows, heist targets, and story mission stock plays</p>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-card"><div class="stat-card-label">Active Windows</div><div class="stat-card-value" style="color:var(--teal)">3</div><div class="stat-card-delta up">Open right now</div></div>
+      <div class="stat-card"><div class="stat-card-label">Avg Stock Gain</div><div class="stat-card-value">+18.4%</div><div class="stat-card-delta up">Post-assassination</div></div>
+      <div class="stat-card"><div class="stat-card-label">Best Play Ever</div><div class="stat-card-value">PSWSR</div><div class="stat-card-delta up">+24.1% in 48h</div></div>
+      <div class="stat-card"><div class="stat-card-label">Missions Tracked</div><div class="stat-card-value">12</div><div class="stat-card-delta neutral">All story arcs</div></div>
+    </div>
+
+    <div id="assassinations" style="margin-bottom:8px">
+      <div class="section-title" style="margin-bottom:12px">🎯 Assassination Windows</div>
+    </div>
+    <div class="heist-grid" style="margin-bottom:24px">
+      <div class="heist-card active-heist">
+        <div class="heist-header">
+          <div>
+            <div class="heist-name">The Madrazzo Assassination</div>
+            <div class="heist-target">Target: Martin Madrazzo — Vice City</div>
+          </div>
+          <span class="heist-status open">OPEN</span>
+        </div>
+        <div class="heist-body">
+          <div class="heist-desc">The most lucrative assassination play in Leonida. Buy Pisswasser (PSWSR) and Duke Arms (DKARM) before completing this mission. Historical data shows consistent 18–24% gains on PSWSR within 48 hours of completion.</div>
+          <div class="heist-stocks">
+            <div class="heist-stock-tag"><span class="heist-stock-sym">PSWSR</span><span class="heist-stock-move up">▲ 18–24%</span></div>
+            <div class="heist-stock-tag"><span class="heist-stock-sym">DKARM</span><span class="heist-stock-move up">▲ 8–12%</span></div>
+            <div class="heist-stock-tag"><span class="heist-stock-sym">LOGOS</span><span class="heist-stock-move down">▼ 3–5%</span></div>
+          </div>
+        </div>
+        <div class="heist-meta">
+          <div class="heist-meta-item"><div class="heist-meta-label">Window</div><div class="heist-meta-value">48h</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Confidence</div><div class="heist-meta-value" style="color:var(--teal)">94%</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Avg Return</div><div class="heist-meta-value" style="color:var(--teal)">+21%</div></div>
+        </div>
+        <div class="heist-footer">
+          <span style="font-size:11px;color:var(--text-3)">Window closes in ~46h</span>
+          <a href="stock-detail.html?sym=PSWSR" class="btn-heist">View PSWSR →</a>
+        </div>
+      </div>
+
+      <div class="heist-card">
+        <div class="heist-header">
+          <div>
+            <div class="heist-name">The Hotel Assassination</div>
+            <div class="heist-target">Target: Hotel executive — Vice Beach</div>
+          </div>
+          <span class="heist-status upcoming">UPCOMING</span>
+        </div>
+        <div class="heist-body">
+          <div class="heist-desc">Buy Lure &amp; Reel (LURE) before this mission. The target's death disrupts the Mariana County tourism sector, causing a short-term dip in competitors and a surge in LURE's market share.</div>
+          <div class="heist-stocks">
+            <div class="heist-stock-tag"><span class="heist-stock-sym">LURE</span><span class="heist-stock-move up">▲ 12–16%</span></div>
+            <div class="heist-stock-tag"><span class="heist-stock-sym">VCPROP</span><span class="heist-stock-move down">▼ 4–7%</span></div>
+          </div>
+        </div>
+        <div class="heist-meta">
+          <div class="heist-meta-item"><div class="heist-meta-label">Window</div><div class="heist-meta-value">36h</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Confidence</div><div class="heist-meta-value" style="color:var(--gold)">81%</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Avg Return</div><div class="heist-meta-value" style="color:var(--teal)">+14%</div></div>
+        </div>
+        <div class="heist-footer">
+          <span style="font-size:11px;color:var(--text-3)">Opens in ~8h</span>
+          <a href="stock-detail.html?sym=LURE" class="btn-heist">View LURE →</a>
+        </div>
+      </div>
+
+      <div class="heist-card">
+        <div class="heist-header">
+          <div>
+            <div class="heist-name">The Multi-Target Assassination</div>
+            <div class="heist-target">Targets: Allied Crystal board members</div>
+          </div>
+          <span class="heist-status open">OPEN</span>
+        </div>
+        <div class="heist-body">
+          <div class="heist-desc">Short Allied Crystal (ALCRYS) before this mission. The elimination of the board triggers a leadership crisis and production halt at the Ambrosia refinery, causing a significant stock decline.</div>
+          <div class="heist-stocks">
+            <div class="heist-stock-tag"><span class="heist-stock-sym">ALCRYS</span><span class="heist-stock-move down">▼ 15–22%</span></div>
+            <div class="heist-stock-tag"><span class="heist-stock-sym">SNFB</span><span class="heist-stock-move up">▲ 2–4%</span></div>
+          </div>
+        </div>
+        <div class="heist-meta">
+          <div class="heist-meta-item"><div class="heist-meta-label">Window</div><div class="heist-meta-value">72h</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Confidence</div><div class="heist-meta-value" style="color:var(--teal)">88%</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Avg Return</div><div class="heist-meta-value" style="color:var(--teal)">+18%</div></div>
+        </div>
+        <div class="heist-footer">
+          <span style="font-size:11px;color:var(--text-3)">Window closes in ~68h</span>
+          <a href="stock-detail.html?sym=ALCRYS" class="btn-heist">View ALCRYS →</a>
+        </div>
+      </div>
+
+      <div class="heist-card">
+        <div class="heist-header">
+          <div>
+            <div class="heist-name">The Construction Assassination</div>
+            <div class="heist-target">Target: Corrupt construction magnate</div>
+          </div>
+          <span class="heist-status closed">CLOSED</span>
+        </div>
+        <div class="heist-body">
+          <div class="heist-desc">Buy Vice City Properties (VCPROP) before this mission. The removal of the corrupt magnate opens up prime Vice-Dale real estate for legitimate development, driving VCPROP higher.</div>
+          <div class="heist-stocks">
+            <div class="heist-stock-tag"><span class="heist-stock-sym">VCPROP</span><span class="heist-stock-move up">▲ 10–14%</span></div>
+            <div class="heist-stock-tag"><span class="heist-stock-sym">SNFB</span><span class="heist-stock-move up">▲ 3–5%</span></div>
+          </div>
+        </div>
+        <div class="heist-meta">
+          <div class="heist-meta-item"><div class="heist-meta-label">Window</div><div class="heist-meta-value">48h</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Confidence</div><div class="heist-meta-value" style="color:var(--text-3)">76%</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Avg Return</div><div class="heist-meta-value" style="color:var(--teal)">+12%</div></div>
+        </div>
+        <div class="heist-footer">
+          <span style="font-size:11px;color:var(--text-3)">Closed — next window TBD</span>
+          <a href="stock-detail.html?sym=VCPROP" class="btn-heist">View VCPROP →</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="bank-heists" style="margin-bottom:8px">
+      <div class="section-title" style="margin-bottom:12px">🏦 Bank Heist Targets</div>
+    </div>
+    <div class="heist-grid" style="margin-bottom:24px">
+      <div class="heist-card active-heist">
+        <div class="heist-header">
+          <div>
+            <div class="heist-name">Sinfrontera Bank — Vice City Branch</div>
+            <div class="heist-target">Vault: $4.2M estimated take</div>
+          </div>
+          <span class="heist-status open">OPEN</span>
+        </div>
+        <div class="heist-body">
+          <div class="heist-desc">Active heist window on the flagship Vice City branch. Short SNFB before the heist. Post-heist dips of 3–5% are historically followed by full recovery within 72h as insurance payouts stabilize the stock.</div>
+          <div class="heist-stocks">
+            <div class="heist-stock-tag"><span class="heist-stock-sym">SNFB</span><span class="heist-stock-move down">▼ 3–5% (short)</span></div>
+            <div class="heist-stock-tag"><span class="heist-stock-sym">DKARM</span><span class="heist-stock-move up">▲ 2–4%</span></div>
+          </div>
+        </div>
+        <div class="heist-meta">
+          <div class="heist-meta-item"><div class="heist-meta-label">Security Level</div><div class="heist-meta-value" style="color:var(--red)">HIGH</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Crew Needed</div><div class="heist-meta-value">4 players</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Payout</div><div class="heist-meta-value" style="color:var(--teal)">$4.2M</div></div>
+        </div>
+        <div class="heist-footer">
+          <span style="font-size:11px;color:var(--text-3)">Window: ~2h remaining</span>
+          <a href="stock-detail.html?sym=SNFB" class="btn-heist">View SNFB →</a>
+        </div>
+      </div>
+
+      <div class="heist-card">
+        <div class="heist-header">
+          <div>
+            <div class="heist-name">Leonida Lottery HQ — Ambrosia</div>
+            <div class="heist-target">Vault: $1.8M jackpot reserves</div>
+          </div>
+          <span class="heist-status upcoming">UPCOMING</span>
+        </div>
+        <div class="heist-body">
+          <div class="heist-desc">The Leonida Lottery jackpot reserves make this a high-value target. LNLOT typically dips 8–12% post-heist before recovering. Low security makes this accessible for smaller crews.</div>
+          <div class="heist-stocks">
+            <div class="heist-stock-tag"><span class="heist-stock-sym">LNLOT</span><span class="heist-stock-move down">▼ 8–12% (short)</span></div>
+          </div>
+        </div>
+        <div class="heist-meta">
+          <div class="heist-meta-item"><div class="heist-meta-label">Security Level</div><div class="heist-meta-value" style="color:var(--teal)">LOW</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Crew Needed</div><div class="heist-meta-value">2 players</div></div>
+          <div class="heist-meta-item"><div class="heist-meta-label">Payout</div><div class="heist-meta-value" style="color:var(--teal)">$1.8M</div></div>
+        </div>
+        <div class="heist-footer">
+          <span style="font-size:11px;color:var(--text-3)">Opens in ~12h</span>
+          <a href="stock-detail.html?sym=LNLOT" class="btn-heist">View LNLOT →</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="missions" style="margin-bottom:8px">
+      <div class="section-title" style="margin-bottom:12px">📋 Story Mission Stock Plays</div>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table" style="table-layout:auto">
+        <thead>
+          <tr><th>Mission</th><th>Buy Before</th><th>Sell Before</th><th>Expected Move</th><th>Confidence</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Madrazzo Assassination</td><td class="td-up">PSWSR, DKARM</td><td class="td-down">LOGOS</td><td class="td-up">+18–24%</td><td class="td-up">94%</td><td><span class="heist-status open" style="font-size:9px">OPEN</span></td></tr>
+          <tr><td>Hotel Assassination</td><td class="td-up">LURE</td><td class="td-down">VCPROP</td><td class="td-up">+12–16%</td><td class="td-up">81%</td><td><span class="heist-status upcoming" style="font-size:9px">UPCOMING</span></td></tr>
+          <tr><td>Multi-Target Assassination</td><td class="td-down">Short ALCRYS</td><td class="td-up">SNFB</td><td class="td-down">-15–22%</td><td class="td-up">88%</td><td><span class="heist-status open" style="font-size:9px">OPEN</span></td></tr>
+          <tr><td>Construction Assassination</td><td class="td-up">VCPROP, SNFB</td><td>—</td><td class="td-up">+10–14%</td><td class="td-neutral">76%</td><td><span class="heist-status closed" style="font-size:9px">CLOSED</span></td></tr>
+          <tr><td>Grassrivers Environmental Event</td><td class="td-down">Short AGTR</td><td class="td-up">LURE</td><td class="td-down">-8–15%</td><td class="td-neutral">72%</td><td><span class="heist-status upcoming" style="font-size:9px">UPCOMING</span></td></tr>
+          <tr><td>Duke Arms Defense Contract</td><td class="td-up">DKARM</td><td>—</td><td class="td-up">+6–10%</td><td class="td-up">85%</td><td><span class="heist-status closed" style="font-size:9px">CLOSED</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <aside class="sidebar-right">
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Active Windows</span><span class="live-dot"></span></div>
+      <div class="movers-list">
+        <a href="stock-detail.html?sym=PSWSR" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11px">Madrazzo Assassination</span><span class="heist-status open" style="font-size:9px">OPEN</span></a>
+        <a href="stock-detail.html?sym=ALCRYS" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11px">Multi-Target Assassination</span><span class="heist-status open" style="font-size:9px">OPEN</span></a>
+        <a href="stock-detail.html?sym=SNFB" class="mover-row"><span class="mover-name" style="font-family:inherit;font-size:11px">SNFB Bank Heist</span><span class="heist-status open" style="font-size:9px">OPEN</span></a>
+      </div>
+      <a href="heists.html" class="widget-footer-link">All missions →</a>
+    </div>
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Top Movers</span></div>
+      <div class="movers-list">
+        <a href="stock-detail.html?sym=DKARM" class="mover-row" data-sym="DKARM"><span class="mover-name">DKARM</span><span class="mover-price">$34.15</span><span class="mover-delta up">▲ 3.9%</span></a>
+        <a href="stock-detail.html?sym=PSWSR" class="mover-row" data-sym="PSWSR"><span class="mover-name">PSWSR</span><span class="mover-price">$4.82</span><span class="mover-delta up">▲ 2.3%</span></a>
+        <a href="stock-detail.html?sym=AGTR" class="mover-row" data-sym="AGTR"><span class="mover-name">AGTR</span><span class="mover-price">$6.33</span><span class="mover-delta down">▼ 2.8%</span></a>
+      </div>
+      <a href="stocks.html" class="widget-footer-link">Full stock table →</a>
+    </div>
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Leonida Market News</span><span class="live-dot"></span></div>
+      <div class="news-feed">
+        <a href="news.html" class="news-item"><span class="news-item-hot">🔥 HOT</span><p class="news-text">Assassination window OPEN — PSWSR ▲2.3%</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">8m ago</span><p class="news-text">SNFB heist window active — security on high alert</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">31m ago</span><p class="news-text">Allied Crystal board members under threat — ALCRYS shorts accumulating</p></a>
+      </div>
+      <a href="news.html" class="widget-footer-link">View full news feed →</a>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a><p class="footer-tagline">The Leonida Market Terminal — Bloomberg for criminals.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><p class="footer-col-title">Markets</p><a href="stocks.html">Stocks</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="heists.html">Heists</a></div>
+      <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="leaderboard.html">Leaderboard</a><a href="premium.html">Premium</a></div>
+      <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale County</a><a href="region.html?r=ambrosia">Ambrosia County</a><a href="region.html?r=kelly">Kelly County</a><a href="region.html?r=mariana">Mariana County</a></div>
+      <div class="footer-col"><p class="footer-col-title">About</p><a href="about.html">About</a><a href="about.html#disclaimer">Disclaimer</a><a href="about.html#legal">Legal</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 LeonidaVice.com — Fan site. Not affiliated with Rockstar Games or Take-Two Interactive.</p></div>
+</footer>
+<script src="data-config.js"></script>
+<script src="app.js"></script>
+</body></html>
+

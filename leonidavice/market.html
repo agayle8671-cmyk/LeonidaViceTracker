@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Market — LeonidaVice</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-track">
+  <span class="tick up">PSWSR <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span><span class="tick down">LOGOS <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span><span class="tick up">SNFB <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span><span class="tick up">DKARM <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span><span class="tick down">ALCRYS <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span><span class="tick up">LURE <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span><span class="tick down">AGTR <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span><span class="tick up">VCPROP <span class="tick-val">$142.00</span> <span class="tick-delta">▲0.40%</span></span>
+  <span class="tick up">PSWSR <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span><span class="tick down">LOGOS <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span><span class="tick up">SNFB <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span><span class="tick up">DKARM <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span><span class="tick down">ALCRYS <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span><span class="tick up">LURE <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span><span class="tick down">AGTR <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span><span class="tick up">VCPROP <span class="tick-val">$142.00</span> <span class="tick-delta">▲0.40%</span></span>
+</div></div>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link active">Markets</a><a href="stocks.html" class="nav-link">Stocks</a>
+    <a href="properties.html" class="nav-link">Properties</a><a href="businesses.html" class="nav-link">Businesses</a>
+    <a href="news.html" class="nav-link">News Feed</a><a href="leaderboard.html" class="nav-link">Leaderboard</a>
+  </div>
+  <div class="nav-right"><a href="portfolio.html" class="btn-ghost">Portfolio</a><a href="premium.html" class="btn-primary">Go Premium</a></div>
+</div></nav>
+<div class="stats-bar"><div class="stats-bar-inner">
+  <div class="stat-item"><span class="stat-label">Market Cap</span><span class="stat-value">$4.82B</span><span class="stat-delta up">▲ 1.4%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">24h Volume</span><span class="stat-value">$218M</span><span class="stat-delta up">▲ 8.2%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Live Traders</span><span class="stat-value" data-traders>3,841</span><span class="stat-delta up">▲ 12%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Assassination Window</span><span class="stat-value live-pulse">OPEN</span><span class="stat-delta up">Bawsaq Active</span></div>
+</div></div>
+
+<div class="market-detail-layout">
+  <div>
+    <div class="breadcrumb">
+      <a href="index.html">Markets</a>
+      <span class="breadcrumb-sep">›</span>
+      <span id="market-tag">Stocks</span>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)">Market Detail</span>
+    </div>
+
+    <div class="market-detail-card">
+      <div class="card-meta" style="margin-bottom:10px">
+        <span class="card-tag" id="market-tag-badge">Stocks</span>
+        <span class="card-vol" id="market-vol">$4.2M Vol.</span>
+        <span class="card-vol">Ends: <span id="market-end">Jun 15, 2026</span></span>
+      </div>
+      <div class="market-detail-title" id="market-title">Loading market data…</div>
+      <div class="market-prob-display">
+        <div class="prob-btn yes">
+          <span class="prob-label">Yes</span>
+          <span class="prob-pct" id="market-yes-pct">72%</span>
+        </div>
+        <div class="prob-btn no">
+          <span class="prob-label">No</span>
+          <span class="prob-pct" id="market-no-pct">28%</span>
+        </div>
+      </div>
+      <div class="prob-bar-thick">
+        <div class="prob-bar-fill" id="market-prob-bar" style="width:72%"></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="portfolio.html" class="btn-primary" style="flex:1;text-align:center;padding:11px;border-radius:8px;font-size:13px;font-weight:700">Buy Yes</a>
+        <a href="portfolio.html" style="flex:1;text-align:center;padding:11px;border-radius:8px;font-size:13px;font-weight:700;background:var(--red-bg);color:var(--red);border:1px solid rgba(255,77,77,0.2)">Buy No</a>
+      </div>
+    </div>
+
+    <div class="market-detail-card">
+      <div class="chart-title">Price History — 7 Days</div>
+      <div class="chart-container">
+        <canvas id="market-chart" width="600" height="180" style="width:100%;height:180px"></canvas>
+      </div>
+    </div>
+
+    <div class="market-detail-card">
+      <div class="chart-title">Recent Activity</div>
+      <div>
+        <div class="activity-item"><span class="activity-side buy">BUY YES</span><span class="activity-amount">$12,400 @ 71%</span><span class="activity-time">2m ago</span></div>
+        <div class="activity-item"><span class="activity-side buy">BUY YES</span><span class="activity-amount">$8,200 @ 71%</span><span class="activity-time">4m ago</span></div>
+        <div class="activity-item"><span class="activity-side sell">BUY NO</span><span class="activity-amount">$3,100 @ 29%</span><span class="activity-time">7m ago</span></div>
+        <div class="activity-item"><span class="activity-side buy">BUY YES</span><span class="activity-amount">$21,000 @ 70%</span><span class="activity-time">12m ago</span></div>
+        <div class="activity-item"><span class="activity-side sell">BUY NO</span><span class="activity-amount">$5,800 @ 30%</span><span class="activity-time">18m ago</span></div>
+        <div class="activity-item"><span class="activity-side buy">BUY YES</span><span class="activity-amount">$9,400 @ 69%</span><span class="activity-time">25m ago</span></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="sidebar-right" style="position:sticky;top:calc(var(--ticker-h) + var(--nav-h) + var(--stats-h) + 24px);height:fit-content">
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Related Markets</span></div>
+      <div class="movers-list">
+        <a href="market.html?id=logos-week" class="mover-row"><span class="mover-name" style="font-size:12px;font-family:inherit">Logos stock above $13?</span><span class="mover-delta up">61%</span></a>
+        <a href="market.html?id=duke-kelly" class="mover-row"><span class="mover-name" style="font-size:12px;font-family:inherit">Duke Arms top biz?</span><span class="mover-delta up">54%</span></a>
+        <a href="market.html?id=snfb-heist" class="mover-row"><span class="mover-name" style="font-size:12px;font-family:inherit">SNFB heist target?</span><span class="mover-delta down">38%</span></a>
+        <a href="market.html?id=lure-roi" class="mover-row"><span class="mover-name" style="font-size:12px;font-family:inherit">Lure best ROI?</span><span class="mover-delta up">83%</span></a>
+      </div>
+      <a href="index.html" class="widget-footer-link">All markets →</a>
+    </div>
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Leonida Market News</span><span class="live-dot"></span></div>
+      <div class="news-feed">
+        <a href="news.html" class="news-item"><span class="news-item-hot">🔥 HOT</span><p class="news-text">Assassination window OPEN — PSWSR ▲2.3%</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">8m ago</span><p class="news-text">Duke Arms secures $420M police contract</p></a>
+        <a href="news.html" class="news-item"><span class="news-time">15m ago</span><p class="news-text">Pisswasser expansion confirmed in Vice-Dale</p></a>
+      </div>
+      <a href="news.html" class="widget-footer-link">View full news feed →</a>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a><p class="footer-tagline">The Leonida Market Terminal — Bloomberg for criminals.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><p class="footer-col-title">Markets</p><a href="stocks.html">Stocks</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="news.html">News Feed</a></div>
+      <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="leaderboard.html">Leaderboard</a><a href="premium.html">Premium</a></div>
+      <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale County</a><a href="region.html?r=ambrosia">Ambrosia County</a><a href="region.html?r=kelly">Kelly County</a><a href="region.html?r=mariana">Mariana County</a></div>
+      <div class="footer-col"><p class="footer-col-title">About</p><a href="about.html">About</a><a href="about.html#disclaimer">Disclaimer</a><a href="about.html#legal">Legal</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 LeonidaVice.com — Fan site. Not affiliated with Rockstar Games or Take-Two Interactive.</p></div>
+</footer>
+<script src="data-config.js"></script>
+<script src="app.js"></script>
+</body></html>
+

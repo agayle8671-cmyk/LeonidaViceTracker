@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Region — LeonidaVice</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-track">
+  <span class="tick up">PSWSR <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span><span class="tick down">LOGOS <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span><span class="tick up">SNFB <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span><span class="tick up">DKARM <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span><span class="tick down">ALCRYS <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span><span class="tick up">LURE <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span><span class="tick down">AGTR <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span><span class="tick up">VCPROP <span class="tick-val">$142.00</span> <span class="tick-delta">▲0.40%</span></span>
+  <span class="tick up">PSWSR <span class="tick-val">$4.82</span> <span class="tick-delta">▲2.30%</span></span><span class="tick down">LOGOS <span class="tick-val">$11.20</span> <span class="tick-delta">▼1.10%</span></span><span class="tick up">SNFB <span class="tick-val">$88.40</span> <span class="tick-delta">▲0.70%</span></span><span class="tick up">DKARM <span class="tick-val">$34.15</span> <span class="tick-delta">▲3.90%</span></span><span class="tick down">ALCRYS <span class="tick-val">$22.60</span> <span class="tick-delta">▼0.50%</span></span><span class="tick up">LURE <span class="tick-val">$9.77</span> <span class="tick-delta">▲1.20%</span></span><span class="tick down">AGTR <span class="tick-val">$6.33</span> <span class="tick-delta">▼2.80%</span></span><span class="tick up">VCPROP <span class="tick-val">$142.00</span> <span class="tick-delta">▲0.40%</span></span>
+</div></div>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link active">Markets</a><a href="stocks.html" class="nav-link">Stocks</a>
+    <a href="properties.html" class="nav-link">Properties</a><a href="businesses.html" class="nav-link">Businesses</a>
+    <a href="news.html" class="nav-link">News Feed</a><a href="leaderboard.html" class="nav-link">Leaderboard</a>
+  </div>
+  <div class="nav-right"><a href="portfolio.html" class="btn-ghost">Portfolio</a><a href="premium.html" class="btn-primary">Go Premium</a></div>
+</div></nav>
+<div class="stats-bar"><div class="stats-bar-inner">
+  <div class="stat-item"><span class="stat-label">Regional GDP</span><span class="stat-value" id="region-gdp">—</span><span class="stat-delta up">▲ 1.2%</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Top Sector</span><span class="stat-value" id="region-sector">—</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Active Businesses</span><span class="stat-value" id="region-biz">—</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-label">Properties</span><span class="stat-value" id="region-props">—</span></div>
+</div></div>
+
+<div class="main-layout">
+  <aside class="sidebar-left">
+    <div class="sidebar-section">
+      <p class="sidebar-heading">All Regions</p>
+      <a href="region.html?r=vice-dale" class="sidebar-link">Vice-Dale County</a>
+      <a href="region.html?r=ambrosia" class="sidebar-link">Ambrosia County</a>
+      <a href="region.html?r=kelly" class="sidebar-link">Kelly County</a>
+      <a href="region.html?r=mariana" class="sidebar-link">Mariana County</a>
+    </div>
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Categories</p>
+      <a href="index.html" class="sidebar-link"><span class="sidebar-icon">◈</span> All Markets</a>
+      <a href="stocks.html" class="sidebar-link"><span class="sidebar-icon">📈</span> Stocks</a>
+      <a href="properties.html" class="sidebar-link"><span class="sidebar-icon">🏢</span> Properties</a>
+      <a href="businesses.html" class="sidebar-link"><span class="sidebar-icon">💼</span> Businesses</a>
+    </div>
+    <div class="sidebar-section">
+      <p class="sidebar-heading">Tools</p>
+      <a href="calculator.html" class="sidebar-link">ROI Calculator</a>
+      <a href="portfolio.html" class="sidebar-link">My Portfolio</a>
+      <a href="premium.html" class="sidebar-link premium-link">⚡ Premium</a>
+    </div>
+  </aside>
+
+  <section class="feed">
+    <div class="breadcrumb" style="margin-bottom:16px">
+      <a href="index.html">Markets</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Regions</span>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)" id="region-name">Loading…</span>
+    </div>
+    <div class="page-header"><h1 id="region-h1">Loading…</h1><p id="region-desc">Loading region data…</p></div>
+
+    <div class="region-map" id="region-map-bg">
+      <div class="region-map-label" id="region-name-map">—</div>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-card"><div class="stat-card-label">Regional GDP</div><div class="stat-card-value" id="region-gdp-card">—</div><div class="stat-card-delta up">▲ 1.2% YoY</div></div>
+      <div class="stat-card"><div class="stat-card-label">Top Sector</div><div class="stat-card-value" id="region-sector-card">—</div></div>
+      <div class="stat-card"><div class="stat-card-label">Active Businesses</div><div class="stat-card-value" id="region-biz-card">—</div></div>
+      <div class="stat-card"><div class="stat-card-label">Properties Listed</div><div class="stat-card-value" id="region-props-card">—</div></div>
+    </div>
+
+    <div class="section-title" style="margin-bottom:12px">Markets in This Region</div>
+    <div class="market-grid">
+      <div class="market-card">
+        <div class="card-header">
+          <div class="card-icon-wrap pisswasser">🍺</div>
+          <div class="card-title-block">
+            <h3 class="card-title">Will Pisswasser stock hit $6.00 before the Madrazzo assassination?</h3>
+            <div class="card-meta"><span class="card-tag">Stocks</span><span class="card-vol">$4.2M Vol.</span></div>
+          </div>
+        </div>
+        <div class="card-outcomes">
+          <a href="market.html?id=pswsr-6" class="outcome-btn yes"><span class="outcome-label">Yes</span><span class="outcome-pct">72%</span></a>
+          <a href="market.html?id=pswsr-6" class="outcome-btn no"><span class="outcome-label">No</span><span class="outcome-pct">28%</span></a>
+        </div>
+        <div class="card-bar"><div class="bar-fill" style="width:72%"></div></div>
+      </div>
+      <div class="market-card">
+        <div class="card-header">
+          <div class="card-icon-wrap vcprop">🌴</div>
+          <div class="card-title-block">
+            <h3 class="card-title">Vice Beach penthouse — price above $150K this week?</h3>
+            <div class="card-meta"><span class="card-tag">Properties</span><span class="card-vol">$1.1M Vol.</span></div>
+          </div>
+        </div>
+        <div class="card-outcomes">
+          <a href="market.html?id=vcprop-150" class="outcome-btn yes"><span class="outcome-label">Yes</span><span class="outcome-pct">47%</span></a>
+          <a href="market.html?id=vcprop-150" class="outcome-btn no"><span class="outcome-label">No</span><span class="outcome-pct">53%</span></a>
+        </div>
+        <div class="card-bar"><div class="bar-fill" style="width:47%"></div></div>
+      </div>
+      <div class="market-card">
+        <div class="card-header">
+          <div class="card-icon-wrap snfb">🏦</div>
+          <div class="card-title-block">
+            <h3 class="card-title">Sinfrontera Bank — heist target this session?</h3>
+            <div class="card-meta"><span class="card-tag">Events</span><span class="card-vol">$3.1M Vol.</span></div>
+          </div>
+        </div>
+        <div class="card-outcomes">
+          <a href="market.html?id=snfb-heist" class="outcome-btn yes"><span class="outcome-label">Yes</span><span class="outcome-pct">38%</span></a>
+          <a href="market.html?id=snfb-heist" class="outcome-btn no"><span class="outcome-label">No</span><span class="outcome-pct">62%</span></a>
+        </div>
+        <div class="card-bar"><div class="bar-fill" style="width:38%"></div></div>
+      </div>
+      <div class="market-card">
+        <div class="card-header">
+          <div class="card-icon-wrap alcrys">🍬</div>
+          <div class="card-title-block">
+            <h3 class="card-title">Allied Crystal — industrial accident before next patch?</h3>
+            <div class="card-meta"><span class="card-tag">Events</span><span class="card-vol">$2.4M Vol.</span></div>
+          </div>
+        </div>
+        <div class="card-outcomes">
+          <a href="market.html?id=alcrys-accident" class="outcome-btn yes"><span class="outcome-label">Yes</span><span class="outcome-pct">29%</span></a>
+          <a href="market.html?id=alcrys-accident" class="outcome-btn no"><span class="outcome-label">No</span><span class="outcome-pct">71%</span></a>
+        </div>
+        <div class="card-bar"><div class="bar-fill" style="width:29%"></div></div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-bottom:12px;margin-top:24px">Top Stocks in This Region</div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Ticker</th><th>Company</th><th>Price</th><th>24h</th><th>Relevance</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="td-ticker">PSWSR</td><td>Pisswasser Brewing</td><td class="td-price">$4.82</td><td class="td-up">▲ 2.3%</td><td><span class="badge badge-gold">Primary</span></td><td><a href="market.html?id=pswsr-6" class="btn-trade">Trade</a></td></tr>
+          <tr><td class="td-ticker">VCPROP</td><td>Vice City Properties</td><td class="td-price">$142.00</td><td class="td-down">▼ 0.9%</td><td><span class="badge badge-gold">Primary</span></td><td><a href="market.html?id=vcprop-150" class="btn-trade">Trade</a></td></tr>
+          <tr><td class="td-ticker">SNFB</td><td>Sinfrontera National Bank</td><td class="td-price">$88.40</td><td class="td-up">▲ 0.7%</td><td><span class="badge badge-purple">Secondary</span></td><td><a href="market.html?id=snfb-heist" class="btn-trade">Trade</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <aside class="sidebar-right">
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Region Stats</span></div>
+      <div class="movers-list">
+        <div class="mover-row"><span class="mover-name">GDP</span><span class="mover-price" id="region-gdp-widget">—</span></div>
+        <div class="mover-row"><span class="mover-name">Top Sector</span><span class="mover-price" id="region-sector-widget">—</span></div>
+        <div class="mover-row"><span class="mover-name">Businesses</span><span class="mover-price" id="region-biz-widget">—</span></div>
+        <div class="mover-row"><span class="mover-name">Properties</span><span class="mover-price" id="region-props-widget">—</span></div>
+      </div>
+    </div>
+    <div class="widget">
+      <div class="widget-header"><span class="widget-title">Top Movers</span></div>
+      <div class="movers-list">
+        <a href="market.html?id=duke-kelly" class="mover-row"><span class="mover-name">DKARM</span><span class="mover-price">$34.15</span><span class="mover-delta up">▲ 3.9%</span></a>
+        <a href="market.html?id=pswsr-6" class="mover-row"><span class="mover-name">PSWSR</span><span class="mover-price">$4.82</span><span class="mover-delta up">▲ 2.3%</span></a>
+        <a href="market.html?id=agtr-dip" class="mover-row"><span class="mover-name">AGTR</span><span class="mover-price">$6.33</span><span class="mover-delta down">▼ 2.8%</span></a>
+      </div>
+      <a href="stocks.html" class="widget-footer-link">Full stock table →</a>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">LeonidaVice</span></a><p class="footer-tagline">The Leonida Market Terminal — Bloomberg for criminals.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><p class="footer-col-title">Markets</p><a href="stocks.html">Stocks</a><a href="properties.html">Properties</a><a href="businesses.html">Businesses</a><a href="news.html">News Feed</a></div>
+      <div class="footer-col"><p class="footer-col-title">Tools</p><a href="calculator.html">ROI Calculator</a><a href="portfolio.html">Portfolio</a><a href="leaderboard.html">Leaderboard</a><a href="premium.html">Premium</a></div>
+      <div class="footer-col"><p class="footer-col-title">Regions</p><a href="region.html?r=vice-dale">Vice-Dale County</a><a href="region.html?r=ambrosia">Ambrosia County</a><a href="region.html?r=kelly">Kelly County</a><a href="region.html?r=mariana">Mariana County</a></div>
+      <div class="footer-col"><p class="footer-col-title">About</p><a href="about.html">About</a><a href="about.html#disclaimer">Disclaimer</a><a href="about.html#legal">Legal</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 LeonidaVice.com — Fan site. Not affiliated with Rockstar Games or Take-Two Interactive.</p></div>
+</footer>
+<script src="data-config.js"></script>
+<script src="app.js"></script>
+<script>
+// Sync extra region elements
+document.addEventListener('DOMContentLoaded', () => {
+  const sync = (from, toIds) => {
+    const src = document.getElementById(from);
+    if (!src) return;
+    toIds.forEach(id => { const el = document.getElementById(id); if(el) el.textContent = src.textContent; });
+  };
+  setTimeout(() => {
+    sync('region-gdp', ['region-gdp-card','region-gdp-widget']);
+    sync('region-sector', ['region-sector-card','region-sector-widget']);
+    sync('region-biz', ['region-biz-card','region-biz-widget']);
+    sync('region-props', ['region-props-card','region-props-widget']);
+  }, 100);
+});
+</script>
+</body></html>
+

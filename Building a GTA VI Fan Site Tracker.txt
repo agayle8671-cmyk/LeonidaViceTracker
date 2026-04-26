@@ -1,0 +1,170 @@
+Comprehensive Engineering and Strategic Deployment of the Leonida Vice Terminal Tracker: A Financial and Technical Architecture for the Grand Theft Auto VI Ecosystem
+The arrival of Grand Theft Auto VI represents a transformative moment in interactive entertainment, fundamentally altering the expectations for community-driven data platforms. The "Leonida Vice Terminal Tracker" is conceived not merely as a conventional fan site, but as a high-frequency financial instrument and socio-economic simulator that mirrors the complexity of the fictional State of Leonida. Building such a platform requires a sophisticated convergence of modern fintech UI paradigms, actor-based economic modeling, and a rigorous understanding of the shifting legal and SEO landscapes that define the mid-2020s digital economy. The architecture must support the high data density and low-latency requirements of a real-time terminal while navigating the stringent intellectual property boundaries established by Take-Two Interactive and Rockstar Games.
+
+Architectural Foundations in the Next.js 15 and React 19 Framework
+The technical core of a modern financial tracker must prioritize performance and maintainability. The selection of Next.js 15, operating on the React 19 runtime, provides the necessary primitives for a "Project-first" layout that supports complex routing and server-side data fetching. This framework transition is critical, as Next.js has become the definitive standard for production-grade dashboards due to its refined handling of the App Router and Server Components, which are essential for managing the intricate data flows of a simulated stock market.
+
+The Evolution of UI Density and Technical Stack
+Fintech applications demand a departure from standard consumer web aesthetics, favoring UI density and information clarity. The use of Shadcn UI, built on Radix UI primitives, allows for the creation of accessible, modular components that can be customized to reflect the high-contrast aesthetic of professional trading terminals. Developers should employ a colocation-based architecture, where each feature maintains its own pages, components, and logic within its specific route folder, ensuring that the codebase remains scalable as the Leonida economy expands.
+Technical RequirementStandard ImplementationStrategic RationaleCore FrameworkNext.js 15 + React 19Leveraging the React Compiler
+for automatic memoization and
+Technical RequirementStandard ImplementationStrategic Rationalelow-latency hydration.Styling EngineTailwind CSS v4Improved performance via the JIT engine and streamlined configuration for high-density
+layouts.Component LibraryShadcn UIEnsuring WCAG AA accessibility while maintaining a professional, data-rich
+interface.Data HandlingTanStack TableProviding robust support for server-side sorting, filtering, and pagination of large asset
+lists.ValidationZodEnforcing strict type safety for incoming financial API data and user transactions.The adoption of Next.js 15 specifically addresses the challenges of peer dependency issues in the npm ecosystem through flags such as --legacy-peer-deps, which are often required when integrating legacy charting libraries with React 19. For teams seeking a pre-configured starting point, the archive/next15 branch of specialized admin templates provides a stable foundation before the industry-wide move toward React 16 and the full React Compiler.
+
+Designing for the Second-Monitor Gaming Workflow
+A significant portion of the user base for a game terminal will engage with the platform on a secondary monitor. This usage pattern dictates specific design requirements, such as support for vertical (portrait) orientations and achromatic, high-contrast themes that reduce eye strain during extended gaming sessions. Best practices for 2026 include optimizing for
+window-snapping tools like Microsoft PowerToys' FancyZones and ensuring that critical financial deltas are visible at a glance without pulling primary focus from the game.
+
+Engineering the Simulated Economy: Algorithmic Price Modeling
+The defining feature of the Vice Terminal is its ability to simulate an adaptive economy that reacts to in-game occurrences and collective player actions. This requires a transition from static data presentation to an individual-based model where market behavior emerges from the decision-making of thousands of simulated actors.
+
+The Actor-Based Decision Logic
+The simulation's logic is rooted in the discrepancy between an actor's "Personal Value" and the "Expected Market Value". Each simulated citizen in Leonida tracks these two figures, and their role as a buyer or seller is derived dynamically. A buyer is an actor who values a good at more than its current market expectation, while a seller values it at less.
+
+The algorithm employs "belief volatility" (\beta) to adjust these expectations over time. On a successful transaction, the buyer decreases their expected price to seek a better deal, while the seller increases theirs. Conversely, failed transactions due to price mismatches force actors to adjust their offers to maintain liquidity. The optimal market price emerges as the median of the total population's personal values, allowing for a realistic convergence toward equilibrium.
+For a more volatile market simulation, a news-driven intensity factor (\gamma) and a buy-sell ratio (\rho) can be integrated into the price tick formula:
+In this model, the ratio \rho is calculated based on the volume of active trades:
+This mathematical approach ensures that the market feels responsive to community sentiment, with the buy-sell ratio typically given five times more weight than the random intensity factor to simulate a market driven by "smart money" and momentum.
+
+Advanced Modeling with Particle Swarm Optimization and GA
+To achieve professional-grade realism, the terminal can implement non-cooperative game theory models. Research indicates that Genetic Algorithms (GA) and Particle Swarm Optimization (PSO) can be used to optimize the decision variables of market agents. In a repeated game scenario, agents compete to maximize their expected wealth by estimating future prices based on a linear, stochastic model.
+Agent ParameterEconomic SignificanceAlgorithmic ImplementationExpected Return (E_i)The target profit of the agent.Calculated as a weighted
+function of previous returns.Risk Behavior (\psi)Shows the relative importance
+of expected return vs. risk.Assigned values (e.g., 0, 0.5, 1)
+based on the agent's profile.Decision VariableThe action taken (buy, sell, or
+hold).Optimized via GA to select the
+maximum allowed stock volume.Interaction EffectThe impact of one company's performance on others.Modeled through interrelation matrices between sectors like
+Energy and Retail.By choosing a diverse set of companies-such as Sinfrontera National Bank, Allied Crystal, and Duke Arms-the simulation can account for inter-industry effects, creating a robust financial web that mirrors the complex corporate environment of the Grand Theft Auto universe.
+Real-Time Infrastructure and Data Synchronization with Supabase
+The high-frequency updates required for a stock ticker necessitate a backend capable of low-latency message broadcasting and secure state management. Supabase, as a Postgres-based platform, provides the "Realtime" primitives necessary to synchronize state across a global user base.
+
+Logical Replication and the Postgres Write-Ahead Log
+Supabase Realtime functions by listening to the Postgres Write-Ahead Log (WAL), which records every change made to the database. For the Vice Terminal, there are two primary
+
+methods for implementation:
+1. Broadcast: This is the recommended method for massive scalability. It allows for the sending of low-latency messages between clients (e.g., cursor tracking or ephemeral price ticks) without the overhead of heavy database commits.
+2. Postgres Changes: This method allows the UI to listen for actual INSERT, UPDATE, or DELETE events. It is ideal for "confirmed" transaction logs and portfolio updates where data persistence is paramount.
+To enable these features, developers must create a supabase_realtime publication and add the relevant tables (e.g., market_prices, user_portfolios) to it. For high-volume price ticks, migrating to a broadcast-with-database-triggers approach is often more efficient, as it allows the database to emit events directly upon a price update without requiring the client to poll the server.
+
+Security and Row Level Security (RLS) Policies
+Security in a financial terminal is non-negotiable. Supabase's RLS ensures that while market data is publicly readable, user-specific data is protected. A typical policy for the terminal would allow anonymous SELECT access to the instruments table while restricting orders and portfolio access to authenticated users:
+-- Allow anyone to see the current stock prices create policy "public_can_read_prices"
+on public.market_prices for select to anon using (true);
+
+-- Only allow users to see their own transactions create policy "users_can_read_own_portfolio"
+on public.portfolios
+for select to authenticated using (auth.uid() = user_id);
+
+The use of "Presence" further enhances the terminal by tracking how many users are currently "active" in a specific market, creating a sense of community urgency and simulating a live trading floor environment.
+
+The Leonida Corporate Ecosystem: Mapping Satire to the Market
+A core component of the terminal's value proposition is its "lore-accurate" corporate mapping. Rockstar Games utilizes parody brands to satirize real-world capitalism, and the tracker must catalog these with precision.
+
+Primary Corporate Entities and Market Sectors
+Based on trailer analysis and deep dives into the game's marketing materials, several "blue-chip" companies have been identified as the foundation of the Leonida economy.
+
+Leonida CorporationReal-World AnalogueMarket RoleSinfrontera National BankSantander / International BanksThe primary institution for large-scale financial services
+and heist targets.Allied Crystal"Big Sugar" ConglomeratesThe largest industrial employer in Leonida, centered in
+Ambrosia County.Duke ArmsColt / Firearms ManufacturersA defense contractor with deep roots in the franchise's historical lore.Lure and ReelBass Pro Shops / Fishing BrandsA dominant player in the nautical and leisure recreation
+sector.AirgatorSpecialized Marine ManufacturersProviding airboats for the Grassrivers and Leonida Keys
+regions.Leonida LotteryState LotteriesA high-frequency "consumer" asset characterized by its
+dolphin mascot.Mega NoticiasSpanish-Language MediaThe primary broadcasting entity for regional news and "Leonida Man" updates.### Geography as a Valuation Driver
+The geography of Leonida is not just a backdrop; it is a fundamental driver of asset value. The state is divided into several known counties, each with distinct economic profiles.
+? Vice-Dale County: The urban core containing Vice City and Vice Beach. This region drives the technology, fashion, and night-life sectors of the economy.
+? Ambrosia County: The industrial heartland, home to the Allied Crystal Sugar Refinery. Market volatility here is often tied to labor news or industrial accidents.
+? Kelly County: Home to Port Gellhorn and a major prison complex. This county is a hub for logistics and security-related stocks.
+? Mariana County: Containing the Leonida Keys and the "Grassrivers" (Everglades). This region is the primary driver for tourism and nautical brands like Lure and Reel.
+Speculation also persists regarding landmasses beyond the state borders. Wording such as "on the doorstep of some of the most beautiful and dangerous waters" suggests that the Bermuda Triangle and potentially Caribbean-inspired islands (Cuba, Bahamas) may play a role in the broader regional economy, introducing international trade and smuggling dynamics to the market tracker.
+
+SEO Strategy: Navigating the Most Anticipated Launch in History
+Launching a fan site in 2026 requires an aggressive, data-backed SEO strategy. Grand Theft Auto VI is not just a game; it is a global search phenomenon that dictates market trends for years.
+
+Global Search Intensity and Regional Dominance
+Search data reveals a significant disparity between "passion intensity" and "total market volume". While the United Kingdom exhibits the highest per-capita search intensity (a score of 100 on Google's index), the United States represents the largest total market by volume-roughly five times the size of the UK due to its massive population.
+CountrySearch Intensity ScorePopulationMarket RealityUK10067MHighest cultural passion; driven by "hometown pride"
+(Rockstar North).Germany9684MHigh engagement and strong PC gaming
+culture.France9468MSignificant impact; similar to the UK in total
+search volume.Pakistan94240MHuge potential but
+constrained by lower console penetration.USA79335MThe dominant market
+for total search volume and revenue potential.The terminal's content strategy must pivot between these regions. For the European market, a focus on "PC requirements" and "technical specs" is highly effective, while for the US market, broader "release date" and "gameplay trailer" keywords drive the most traffic.
+
+Keywords, Hype Cycles, and Competitive Positioning
+The release date-confirmed for May 26, 2026-serves as the primary keyword anchor, accounting for over 2.1 million searches in a single year. However, the "Vice Terminal" must also prepare for periods of radio silence. During late 2025 and early 2026, search interest for the title "Crimson Desert" officially surpassed GTA VI on Google Trends, indicating that competitors can and will capitalize on Rockstar's guarded marketing approach.
+To combat this, the tracker should focus on "Lore SEO"-answering specific questions about the "Leonida map project," the "Bermuda Triangle event," and the "Leonida Man" social media phenomenon. This high-intent traffic is more likely to engage with the terminal's financial tools than users simply searching for the release date.
+
+Legal Compliance and the Strategic Monetization of Fan Projects
+Developing a site for a Rockstar property requires a nuanced understanding of Take-Two Interactive's commercial policies. Historically, the company has been protective of its intellectual property, but the landscape is shifting toward official support for creator communities.
+
+Rockstar's Creator Services and Commercial Restrictions
+The new "Platform License Agreement" (PLA) for creator services outlines strict conditions for the distribution and operation of customized versions of their games. For a fan site and tracker, the "non-commercial" use policy is the primary guideline. Take-Two generally does not object to fans using materials for non-commercial purposes, provided it does not spoil the plot or promote cheating.
+However, the definition of "commercial exploitation" is broad. Prohibited activities include:
+? Real-Money Cash-Outs: Any mechanic that allows a user to pay fiat currency and receive real-world monetary value in return.
+? Third-Party Brand Sponsorship: Operating a site or server as the "official" outlet for an external brand.
+? Virtual Item Sales: Selling or facilitating access to items created by Rockstar.
+The acquisition of the FiveM and RedM modding teams signals a future where "user-generated content monetization" becomes a legitimate marketplace, potentially modeled after platforms like Roblox. This could provide a future pathway for the Vice Terminal to integrate directly with Rockstar's official ecosystem.
+### Monetization Options: Ad Networks and Subscription Models
+For independent fan sites, monetization is typically achieved through advertising or premium service tiers. As traffic grows beyond 50,000 monthly sessions, publishers often move from Google AdSense to managed ad partners like Mediavine or Playwire.
+Monetization StrategyPlatformPros/ConsAd-Based (Starter)Google AdSenseNo traffic requirements; ease of
+use; low CPMs.Ad-Based (Premium)Mediavine / RaptiveHigh revenue potential; strict exclusivity; long approval
+process.Specialized AdsPlaywireExpert yield management for gaming; strong COPPA
+compliance.SubscriptionStripeDirect revenue; allows for
+"ad-free" terminal experience.When implementing a subscription model via Stripe, the developer must ensure that the user's "active subscription" status is synchronized with the database in real-time through webhooks.
+This allows for a "Premium Terminal" experience, which might include features like
+higher-resolution charts, real-time portfolio alerts, and access to "Insider News" simulated within the Leonida economy.
+
+Technical Execution: Implementing the Stripe Subscription Flow
+To build a sustainable platform, the terminal should offer a seamless "free-to-premium" transition. This involves setting up a Stripe-Supabase integration that tracks subscription statuses across the Next.js App Router.
+1. Checkout Session: When a user selects a plan, the frontend initiates a request to the
+/api/stripe/checkout endpoint. The backend uses the Stripe SDK to create a session and
+
+returns a session_id, redirecting the user to a hosted Stripe checkout page.
+2. Webhook Synchronization: Once the payment is successful, Stripe sends a checkout.session.completed event to the site's webhook endpoint. The backend then updates the user's record in Supabase, setting the is_subscribed boolean to true.
+3. Access Control: On the frontend, the getUser function (or a dedicated Supabase hook) retrieves the subscription status. If the user is subscribed, the terminal unlocks advanced financial features, such as "Advanced PSO Market Signals" or "Leonida Real-Estate Listings".
+For development, tools like the Stripe CLI allow for local testing of webhooks using commands like stripe listen --forward-to http://localhost:3000/api/webhook, ensuring that the subscription logic is robust before deploying to a production environment.
+
+Design Aesthetics: Adopting the Bloomberg Design Ethos
+To achieve the "Terminal" feel, the UI must embody the design hallmarks of professional financial tools. The Bloomberg Terminal is characterized by its high-contrast "Amber and Black" scheme, designed for quick data parsing and clarity in high-pressure environments.
+
+Color Palette and Visual Signals
+A true fintech experience avoids "noise" and focuses on semantic meaning. The primary colors for the Leonida Vice Terminal should be meticulously chosen.
+? Background: Deep Black (#000000) to maximize contrast and reduce eye strain.
+? Primary Text: Bloomberg Amber (#FFA028) for labels and non-semantic data.
+? Upward Trend: Mint Green (#4AF6C3) for positive deltas.
+? Downward Trend: Bright Red (#FF433D) for negative deltas.
+? Market Indicators: Sky Blue (#0068FF) for institutional data or primary navigation buttons.
+
+Designing for Accessibility (CVD)
+Accessibility is a requirement, not a feature. Bloomberg's research into Color Vision Deficiency (CVD) highlights that red and green can be indistinguishable for users with Deuteranopia. The terminal should include a "CVD Mode" that shifts semantic signaling to a blue-and-red or
+blue-and-orange palette, ensuring that "up" and "down" indicators remain clear for all traders in Leonida.
+UI ContextDefault SignalCVD-Friendly SignalMarket GainGreen (#4AF6C3)Blue (#0068FF).Market LossRed (#FF433D)Amber/Orange (#FFA028).Inactive/BaselineWhite (#FFFFFF)Grey/Amber.This attention to detail not only improves usability but also establishes the platform as a professional-grade tool within the gaming community, setting it apart from "low-effort" fan blogs.
+Conclusion: Strategic Launch and Future Outlook
+
+The launch of the Leonida Vice Terminal Tracker is a multi-phase operation. Phase one focuses on the deployment of the high-density UI and the initial mapping of the Leonida corporate landscape based on official trailers. Phase two involves the activation of the actor-based economic simulation, using Supabase Realtime to synchronize price fluctuations across the global community. Phase three centers on the scaling of SEO and the implementation of the Stripe-backed subscription model to ensure long-term sustainability.
+The future of the terminal will be dictated by the game's evolution. As Rockstar adds new regions beyond Vice City and integrates deeper UGC marketplaces, the tracker must adapt, potentially becoming a primary gateway for players to manage their virtual portfolios. By combining fintech-level engineering with a deep respect for the satirical world of Leonida, the developer can create the definitive digital infrastructure for the Grand Theft Auto VI era.
+
+Works cited
+
+1. Grand Theft Auto 6: Release Date, Map, Characters & Trailer - ALM Corp, https://almcorp.com/blog/grand-theft-auto-6-release-date-trailer-map-characters-platforms/ 2. Grand Theft Auto VI | GTA Wiki | Fandom, https://gta.fandom.com/wiki/Grand_Theft_Auto_VI 3. 15+ Best Shadcn Templates for Next.js Developers - WrapPixel, https://www.wrappixel.com/best-shadcn-templates/ 4. GTA 6 Parody Brands: Check Release Date, Development Status, Price, Maps, Characters, PC Requirements & More - The Sunday Guardian,
+https://sundayguardianlive.com/tech-news/gta-6-parody-brands-check-release-date-developme nt-status-price-maps-characters-pc-requirements-more-163540/ 5. Legal - Rockstar Games, https://www.rockstargames.com/legal 6. Jan. 12 2026 Creator Platform License Agreement In addition to Rockstar's Terms of Service ("Rockstar TOS - Cfx.re,
+https://static.cfx.re/platform-license-agreement-12-jan-2026.pdf 7. 27 Best Next.js Admin Dashboard Templates 2026 - Colorlib,
+https://colorlib.com/wp/nextjs-admin-dashboard-templates/ 8. Next.js 15 + React 19 - shadcn/ui,
+https://v3.shadcn.com/docs/react-19 9. Best Next.js Dashboard Templates in 2026: 8 Production-Ready Options, https://thefrontkit.com/blogs/best-nextjs-dashboard-templates-2026
+10. Next.js & shadcn/ui Admin Dashboard Template - Vercel, https://vercel.com/templates/next.js/next-js-and-shadcn-ui-admin-dashboard 11. 28 Best Free Next.js Admin Dashboard Templates (2026) - AdminLTE,
+https://adminlte.io/blog/nextjs-admin-dashboard-templates/ 12. The Ultimate Guide to Creating the Best Dual Monitor Setup in 2026 - Spacet,
+https://spacetup.com/blogs/en/creating-the-best-dual-monitor-setup 13. Ticker component for shadcn/ui - React + Figma - shadcncraft,
+https://shadcncraft.com/components/pro-application/ticker 14. Simulated Economy (1) | Jason Fantl, https://jasonfantl.com/posts/Simulated-Economy-(1)/ 15. Simple algorithm modeling stock market behavior - Stack Overflow,
+https://stackoverflow.com/questions/19302365/simple-algorithm-modeling-stock-market-behavio r 16. A game-theoretic based dynamic stock market modeling & solution - ResearchGate, https://www.researchgate.net/publication/220755775_A_game-theoretic_based_dynamic_stock
+_market_modeling_solution 17. Here Are Some More Confirmed GTA 6 Company Brands - Gameranx,
+https://gameranx.com/updates/id/560452/article/here-are-some-more-confirmed-gta-6-company- brands/ 18. Getting Started with Realtime | Supabase Docs, https://supabase.com/docs/guides/realtime/getting_started 19. Using Realtime with Next.js |
+
+Supabase Docs, https://supabase.com/docs/guides/realtime/realtime-with-nextjs 20. Subscribing to Database Changes | Supabase Docs, https://supabase.com/docs/guides/realtime/subscribing-to-database-changes 21. Supabase Realtime Tutorial | Realtime Database Updates - YouTube, https://www.youtube.com/watch?v=TVp_GEiAcDY 22. Use Supabase with Next.js, https://supabase.com/docs/guides/getting-started/quickstarts/nextjs 23. Building Real-time Magic: Supabase Subscriptions in Next.js 15 - DEV Community,
+https://dev.to/lra8dev/building-real-time-magic-supabase-subscriptions-in-nextjs-15-2kmp 24. I think people are overlooking one very specific line in Leonida Keys description : r/GTA6, https://www.reddit.com/r/GTA6/comments/1rsni9i/i_think_people_are_overlooking_one_very_sp ecific/ 25. GTA 6 Is The Most Anticipated Game Study Finds - RockstarINTEL, https://rockstarintel.com/gta-6-is-the-most-anticipated-game-study-finds/ 26. How the Release of Grand Theft Auto VI Could Impact Take-Two's Stock Price, https://www.investing.com/analysis/how-the-release-of-grand-theft-auto-vi-could-impact-taketwo s-stock-price-200674679 27. UK Leads Global GTA 6 Search Intensity - But is USA Still King?, https://www.gta6hype.com/blog/gta6-global-search-rankings-uk-leads-intensity/ 28. Take-Two Interactive Software, Inc. Reiterates Expectations to Achieve Sequential Increases in, and Record Levels of, Net Bookings in Fiscal 2026 and 2027, https://www.take2games.com/ir/news/take-two-interactive-software-inc-reiterates-expectations
+29. r/GTA6unmoderated - It's official: Crimson Desert has overtaken GTA 6 on Google Trends, https://www.reddit.com/r/GTA6unmoderated/comments/1rtx6z5/its_official_crimson_desert_has
+_overtaken_gta_6/ 30. Take-Two Interactive Software, Inc. - Corporate Profile, https://taketwointeractivesoftwareinc.gcs-web.com/ 31. Policy on posting copyrighted Rockstar Games material, https://support.rockstargames.com/articles/7bNaeoMFTV0iUDGhStTXvz/policy-on-posting-copy righted-rockstar-games-material 32. GTA 6 user-generated content monetization will make some players "millionaires," claims content creator who had a "party with Rockstar" - GamesRadar,
+https://www.gamesradar.com/games/grand-theft-auto/gta-6-user-generated-content-monetizatio n-will-make-some-players-millionaires-claims-content-creator-who-had-a-party-with-rockstar/ 33. Mediavine vs AdSense vs Publift: Who Pays Better in 2026?, https://www.publift.com/blog/mediavine-vs-adsense-vs-publift 34. Been burned a few times, taking the plunge again (6.2 million page views, 96.2% U.S.) : r/adops - Reddit, https://www.reddit.com/r/adops/comments/1rcs7o0/been_burned_a_few_times_taking_the_plun ge_again/ 35. Next.js Course: Accepting Payments with Stripe - MakerKit, https://makerkit.dev/courses/nextjs-app-router/stripe-subscriptions 36. Implementing Stripe Subscriptions with Supabase, Next.js, and FastAPI | by Ojas Kapre, https://medium.com/@ojasskapre/implementing-stripe-subscriptions-with-supabase-next-js-and- fastapi-666e1aada1b5 37. KolbySisk/next-supabase-stripe-starter - GitHub, https://github.com/KolbySisk/next-supabase-stripe-starter 38. #33 Stripe Integration Guide for Next.js 15 with Supabase - DEV Community,
+https://dev.to/flnzba/33-stripe-integration-guide-for-nextjs-15-with-supabase-13b5 39. Stripe SUBSCRIPTIONS with Next.js & Supabase - YouTube, https://www.youtube.com/watch?v=VHAOKbpMat0 40. Bloomberg L.P. Brand Color Palette: Hex, RGB, CMYK and UIs - Mobbin, https://mobbin.com/colors/brand/bloomberg 41.
+Bloomberg's customer-centric design ethos, https://www.bloomberg.com/company/stories/bloombergs-customer-centric-design-ethos/ 42. Bloomberg Color Palette, https://www.color-hex.com/color-palette/111776 43. Designing the
+
+Terminal for Color Accessibility | Bloomberg LP, https://www.bloomberg.com/company/stories/designing-the-terminal-for-color-accessibility/ 44. Bloomberg mixes color coding, symbols in new graphics package - NCS - NewscastStudio, https://www.newscaststudio.com/2015/10/06/bloomberg-mixes-color-coding-symbols-in-new-gra phics-package/
